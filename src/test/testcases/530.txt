@@ -1,0 +1,14 @@
+
+        
+        procedure main();
+            
+        begin
+            with a, b: integer; do
+                begin
+                a:=3;
+                b:=4;
+                putInt(a);
+                end
+
+        end
+        

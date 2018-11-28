@@ -1,0 +1,17 @@
+
+        procedure main();
+        var a: integer;
+            b: integer;
+        begin
+            a := 10;
+            b := 0 ;
+            while(b < a) do
+                begin
+                b := b + 1 ;
+                if (b = 7) then 
+                    break;
+            end
+            putInt(b);
+
+        end
+        

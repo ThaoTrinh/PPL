@@ -1,0 +1,15 @@
+
+        
+        procedure main();
+            var a: integer;
+                b: integer;
+        begin
+            b:=0;
+            for a:=3 to 7 do
+                begin
+                    b:=b+1;
+                    a:=a+1;
+                end
+            putInt(b);
+        end
+        

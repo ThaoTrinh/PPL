@@ -152,8 +152,6 @@ class CodeGenVisitor(BaseVisitor, Utils):
 
         glenv = o
 
-
-
         # Generate code for parameter declarations
         if isInit:
             self.emit.printout(self.emit.emitVAR(frame.getNewIndex(), "this", ClassType(self.className), frame.getStartLabel(), frame.getEndLabel(), frame))
@@ -281,6 +279,10 @@ class CodeGenVisitor(BaseVisitor, Utils):
 
         exp, type_exp = self.visit(ast.exp, Access(frame, sym, False, True))
         lhs, type_lhs = self.visit(ast.lhs, Access(frame, sym, True, True))
+
+        if isinstance(type_exp, MType):
+            type_exp = type_exp.rettype
+            exp = ""
 
         if not isinstance(type_exp, type(type_lhs)):
             exp = exp + self.emit.emitI2F(frame)
@@ -410,7 +412,6 @@ class CodeGenVisitor(BaseVisitor, Utils):
         frame.enterLoop()
         breakLabel = frame.getBreakLabel()
         continueLabel = frame.getContinueLabel()
-
         self.emit.printout(self.emit.emitLABEL(continueLabel, frame))
 
         exp , type_exp = self.visit(ast.exp, Access(frame, sym, False, True))
@@ -424,3 +425,88 @@ class CodeGenVisitor(BaseVisitor, Utils):
         self.emit.printout(self.emit.emitGOTO(continueLabel, frame))
         
         self.emit.printout(self.emit.emitLABEL(breakLabel, frame))
+
+    def visitFor(self, ast, o):
+        if ast.up is False:
+            condition = BinaryOp(">", ast.id, ast.expr2)
+        else:
+            condition = BinaryOp("<", ast.id, ast.expr2)
+
+        self.visit(Assign(ast.id, ast.expr1), o)
+        self.visit(While(condition, ast.loop), o)
+        
+
+
+    def visitWith(self, ast, o):
+        subctxt = o
+        frame = subctxt.frame
+        sym = subctxt.sym
+
+        frame.enterScope(False)
+        s = SubBody(frame, sym[:])
+        
+        for x in ast.decl:
+            s = self.visit(x, s)
+        
+        
+        self.emit.printout(self.emit.emitLABEL(frame.getStartLabel(), frame))
+
+        for x in ast.stmt:
+            self.visit(x,s)
+
+        
+        self.emit.printout(self.emit.emitLABEL(frame.getEndLabel(), frame))
+        
+        frame.exitScope()
+
+
+    def visitCallExpr(self, ast, o):
+        ctxt = o
+        frame = ctxt.frame
+        nenv = ctxt.sym
+        sym = self.lookup(ast.method.name, nenv, lambda x: x.name)
+        cname = sym.value.value
+    
+        ctype = sym.mtype
+
+        in_ = ("", list())
+        for x in ast.param:
+            str1, typ1 = self.visit(x, Access(frame, nenv, False, True))
+            in_ = (in_[0] + str1, in_[1].append(typ1))
+        self.emit.printout(in_[0])
+        self.emit.printout(self.emit.emitINVOKESTATIC(cname + "/" + ast.method.name, ctype, frame))
+
+        return cname, ctype
+
+    def visitArrayCell(self, ast, o):
+        pass
+    
+    def visitReturn(self, ast, o):
+        subctxt = o
+        frame = subctxt.frame
+        sym = subctxt.sym
+
+        if ast.expr is None:
+            self.emit.printout(self.emit.emitRETURN(VoidType(), frame))
+        else:
+            exp , type_exp = self.visit(ast.expr, Access(frame, sym, False, True))
+            self.emit.printout(exp)
+            self.emit.printout(self.emit.emitRETURN(type_exp, frame))
+
+    def visitBreak(self, ast, o):
+        subctxt = o
+        frame = subctxt.frame
+        sym = subctxt.sym
+
+        breakLabel = frame.getBreakLabel()
+        self.emit.printout(self.emit.emitGOTO(breakLabel, frame))
+
+
+    def visitContinue(self, ast, o):
+        subctxt = o
+        frame = subctxt.frame
+        sym = subctxt.sym
+
+        continueLabel = frame.getContinueLabel()
+        
+        self.emit.printout(self.emit.emitGOTO(continueLabel, frame))

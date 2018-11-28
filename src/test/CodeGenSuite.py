@@ -386,3 +386,121 @@ class CheckCodeGenSuite(unittest.TestCase):
         '''
         expectation = '10'
         self.assertTrue(TestCodeGen.test(case, expectation, 524))
+
+    def test_25(self):
+        case = '''
+        procedure main();
+        var a: integer;
+            b: integer;
+        begin
+            a := 10;
+            b := 0 ;
+            while(b < a) do
+                begin
+                b := b + 1 ;
+                if (b = 7) then 
+                    break;
+            end
+            putInt(b);
+
+        end
+        '''
+        expectation = '7'
+        self.assertTrue(TestCodeGen.test(case, expectation, 525))
+
+    def test_26(self):
+        case = '''
+        procedure main();
+        var a: integer;
+            b: integer;
+            c: integer;
+        begin
+            a := 10;
+            b := 0 ;
+            c:=0;
+            while(b < a) do
+                begin
+
+                b := b + 1 ;
+                if (b = 7) then
+                    continue;
+                c:= c+1;
+            end
+            putInt(c);
+
+        end
+        '''
+        expectation = '9'
+        self.assertTrue(TestCodeGen.test(case, expectation, 526))
+
+    def test_27(self):
+        case = '''
+        procedure main();
+        var a: integer;
+            b: integer;
+            c: integer;
+        begin
+            a := 10;
+            b := 0 ;
+            c:=0;
+                if (b = 7) then
+                    return;
+                else
+                    return;
+        end
+        '''
+        expectation = ''
+        self.assertTrue(TestCodeGen.test(case, expectation, 527))
+
+    def test_28(self):
+        case = '''
+        function foo(): integer;
+        begin
+            return 3;
+        end
+        procedure main();
+            var a: integer;
+        begin
+            a:=foo();
+            putInt(a);
+        end
+        '''
+        expectation = '3'
+        self.assertTrue(TestCodeGen.test(case, expectation, 528))
+
+    def test_29(self):
+        case = '''
+        
+        procedure main();
+            var a: integer;
+                b: integer;
+        begin
+            b:=0;
+            for a:=3 to 7 do
+                begin
+                    b:=b+1;
+                    a:=a+1;
+                end
+            putInt(b);
+        end
+        '''
+        expectation = '4'
+        self.assertTrue(TestCodeGen.test(case, expectation, 529))
+
+    def test_30(self):
+        case = '''
+        
+        procedure main();
+            
+        begin
+            with a, b: integer; do
+                begin
+                a:=3;
+                b:=4;
+                putInt(a);
+                end
+
+        end
+        '''
+        expectation = '3'
+        self.assertTrue(TestCodeGen.test(case, expectation, 530))

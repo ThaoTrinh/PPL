@@ -432,9 +432,9 @@ class Emitter():
             result.append(self.jvm.emitIFICMPGE(labelF))
         elif op == "<=":
             result.append(self.jvm.emitIFICMPGT(labelF))
-        elif op == "!=":
+        elif op == "<>":
             result.append(self.jvm.emitIFICMPEQ(labelF))
-        elif op == "==":
+        elif op == "=":
             result.append(self.jvm.emitIFICMPNE(labelF))
         result.append(self.emitPUSHCONST("1", IntType(), frame))
         frame.pop()
@@ -465,9 +465,9 @@ class Emitter():
             result.append(self.jvm.emitIFICMPGE(falseLabel))
         elif op == "<=":
             result.append(self.jvm.emitIFICMPGT(falseLabel))
-        elif op == "!=":
+        elif op == "<>":
             result.append(self.jvm.emitIFICMPEQ(falseLabel))
-        elif op == "==":
+        elif op == "=":
             result.append(self.jvm.emitIFICMPNE(falseLabel))
         result.append(self.jvm.emitGOTO(trueLabel))
         return ''.join(result)
@@ -642,6 +642,7 @@ class Emitter():
 
     def emitEPILOG(self):
         file = open(self.filename, "w")
+
         file.write(''.join(self.buff))
         file.close()
 
