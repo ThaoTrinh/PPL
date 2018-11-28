@@ -1,0 +1,8 @@
+
+        procedure main();
+        var a: boolean;
+        begin
+            a := 1 < 2;
+            putBool(a);
+        end
+        

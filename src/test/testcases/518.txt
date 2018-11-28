@@ -1,0 +1,6 @@
+
+        procedure main();
+        begin
+            putString("Hello World");
+        end
+        

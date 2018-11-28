@@ -1,0 +1,6 @@
+
+        procedure main();
+        begin
+            putFloat(2 - 1.1);
+        end
+        

@@ -1,0 +1,13 @@
+
+        procedure main();
+        var a: integer;
+            b: integer;
+        begin
+            a := 10;
+            b := 0 ;
+            while(b < a) do
+                b := b + 1 ;
+
+            putInt(b);
+        end
+        

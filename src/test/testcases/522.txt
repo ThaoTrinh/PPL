@@ -1,0 +1,9 @@
+
+        procedure main();
+        var a: boolean;
+        begin
+            a := True;
+            a := not a;
+            putBool(a);
+        end
+        

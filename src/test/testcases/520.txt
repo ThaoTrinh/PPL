@@ -1,0 +1,9 @@
+
+        procedure main();
+        var a: integer;
+        begin
+            a := 1;
+            a := -a;
+            putInt(a);
+        end
+        

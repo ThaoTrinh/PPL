@@ -1,0 +1,6 @@
+
+        procedure main();
+        begin
+            putInt(2 - 1);
+        end
+        

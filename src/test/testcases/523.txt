@@ -1,0 +1,10 @@
+
+        procedure main();
+        var a: boolean;
+        begin
+            if (True) then
+                putString("true");
+            else
+                putString("false");
+        end
+        

@@ -1,0 +1,13 @@
+
+        var x, y: integer;
+        var a, b, c: real;
+        procedure main();
+        var x,y: real;
+        begin
+            foo();
+        end
+        procedure foo();
+        var x,y: real;
+        begin
+        end
+        
