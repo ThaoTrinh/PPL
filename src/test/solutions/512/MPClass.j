@@ -3,6 +3,9 @@
 .super java.lang.Object
 .field static x I
 .field static y I
+.field static a F
+.field static b F
+.field static c F
 
 .method public static main([Ljava/lang/String;)V
 .var 0 is args [Ljava/lang/String; from Label0 to Label1

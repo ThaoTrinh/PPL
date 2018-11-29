@@ -1,6 +1,9 @@
 
         procedure main();
+        var a: integer;
         begin
-            putString("Hello World");
+            a := 1;
+            a := -a;
+            putInt(a);
         end
         

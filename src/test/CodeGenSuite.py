@@ -4,63 +4,6 @@ from AST import *
 
 
 class CheckCodeGenSuite(unittest.TestCase):
-    # def test_int(self):
-    #     """Simple program: int main() {} """
-    #     input = """procedure main(); begin putInt(100); end"""
-    #     expect = "100"
-    #     self.assertTrue(TestCodeGen.test(input,expect,500))
-
-    # def test_int4(self):
-    #     """Simple program: int main() {} """
-    #     input = """procedure main(); begin putFloat(100.0); end"""
-    #     expect = "100.0"
-    #     self.assertTrue(TestCodeGen.test(input,expect,503))
-
-    # def test_int_ast(self):
-    # 	input = Program([
-    # 		FuncDecl(Id("main"),[],[],[
-    # 			CallStmt(Id("putInt"),[IntLiteral(5)])])])
-    # 	expect = "5"
-    # 	self.assertTrue(TestCodeGen.test(input,expect,501))
-
-    # def test2(self):
-    #     input = Program([
-    # 		FuncDecl(Id("main"),[],[],[
-    # 			CallStmt(Id("putFloat"),[FloatLiteral(5.0)])])])
-    #     expect = "5.0"
-    #     self.assertTrue(TestCodeGen.test(input,expect,502))
-
-    # def abc(self):
-    #     input = '''
-    #     var a: integer;
-    #     procedure main(b: integer);
-    #     var c: real;
-    #     begin
-    #         a := b;
-    #     end
-    #     '''
-
-    #     self.env = [a,main] Symbol(Cname)
-
-    #     main:
-    #         subbody
-    #             frame
-    #             symbol_local:
-    #                 Symbol(Index)
-    #                 args: 0
-    #                 b: 1
-    #                 c: 2
-
-    #     a + 1
-    #     1 + 1
-
-    #     code, type = self.visit()
-
-    #     lhs, rhs, op
-
-    #     self.emit.printout(code)
-
-    #     BinaryOp: code, type
 
     def test_0(self):
         """Simple program: int main() {} """
@@ -91,30 +34,7 @@ class CheckCodeGenSuite(unittest.TestCase):
         expectation = "1005.5"
         self.assertTrue(TestCodeGen.test(case, expectation, 501))
 
-    # def test_2(self):
-    #     ''' test redeclared func - func '''
-    #     case = """
-    #     procedure main();
-    #     begin
-    #         putInt(foo());
-    #         putFloat(foo1());
-    #         return;
-    #     end
-
-    #     function foo(): integer;
-    #     begin
-    #         return 1;
-    #     end
-
-    #     function foo1(): real;
-    #     begin
-    #         return 1.0;
-    #     end
-    #     """
-    #     expectation = '1\n1.0'
-    #     self.assertTrue(TestCodeGen.test(case, expectation, 502))
-
-    def test_3(self):
+    def test_2(self):
         ''' test int + int '''
         case = '''
         procedure main();
@@ -123,20 +43,9 @@ class CheckCodeGenSuite(unittest.TestCase):
         end
         '''
         expectation = '2'
-        self.assertTrue(TestCodeGen.test(case, expectation, 503))
+        self.assertTrue(TestCodeGen.test(case, expectation, 502))
 
-    def test_4(self):
-        ''' test float + int '''
-        case = '''
-        procedure main();
-        begin
-            putFloat(1.1 + 2);
-        end
-        '''
-        expectation = '3.1'
-        self.assertTrue(TestCodeGen.test(case, expectation, 504))
-
-    def test_5(self):
+    def test_3(self):
         ''' test float + float '''
         case = '''
         procedure main();
@@ -145,20 +54,9 @@ class CheckCodeGenSuite(unittest.TestCase):
         end
         '''
         expectation = '3.3'
-        self.assertTrue(TestCodeGen.test(case, expectation, 505))
+        self.assertTrue(TestCodeGen.test(case, expectation, 503))
 
-    def test_6(self):
-        ''' test int - int '''
-        case = '''
-        procedure main();
-        begin
-            putInt(2 - 1);
-        end
-        '''
-        expectation = '1'
-        self.assertTrue(TestCodeGen.test(case, expectation, 506))
-
-    def test_7(self):
+    def test_4(self):
         ''' test float - float '''
         case = '''
         procedure main();
@@ -167,9 +65,9 @@ class CheckCodeGenSuite(unittest.TestCase):
         end
         '''
         expectation = '1.0999999'
-        self.assertTrue(TestCodeGen.test(case, expectation, 507))
+        self.assertTrue(TestCodeGen.test(case, expectation, 504))
 
-    def test_8(self):
+    def test_5(self):
         ''' test int - float '''
         case = '''
         procedure main();
@@ -178,9 +76,47 @@ class CheckCodeGenSuite(unittest.TestCase):
         end
         '''
         expectation = '0.9'
-        self.assertTrue(TestCodeGen.test(case, expectation, 508))
+        self.assertTrue(TestCodeGen.test(case, expectation, 505))
 
-    def test_9(self):
+    def test_6(self):
+        ''' test float + int '''
+        case = '''
+        procedure main();
+        begin
+            putFloat(1.1 + 2);
+        end
+        '''
+        expectation = '3.1'
+        self.assertTrue(TestCodeGen.test(case, expectation, 506))
+
+    def test_7(self):
+        ''' test redeclared func - func '''
+        case = """
+        procedure main();
+            var a: integer;
+                d: real;
+        begin
+            a:= foo();
+
+            putInt(a);
+            putFloat(foo1());
+            return;
+        end
+
+        function foo(): integer;
+        begin
+            return 1;
+        end
+
+        function foo1(): real;
+        begin
+            return 1.0;
+        end
+        """
+        expectation = '11.0'
+        self.assertTrue(TestCodeGen.test(case, expectation, 507))
+
+    def test_8(self):
         ''' test float - int '''
         case = '''
         procedure main();
@@ -189,20 +125,9 @@ class CheckCodeGenSuite(unittest.TestCase):
         end
         '''
         expectation = '1.4000001'
-        self.assertTrue(TestCodeGen.test(case, expectation, 509))
+        self.assertTrue(TestCodeGen.test(case, expectation, 508))
 
-    def test_10(self):
-        case = '''
-        procedure main();
-        begin
-            putInt(1 * 2);
-            putFloat(1.2 * 4);
-        end
-        '''
-        expectation = '24.8'
-        self.assertTrue(TestCodeGen.test(case, expectation, 510))
-
-    def test_11(self):
+    def test_9(self):
         case = '''
         procedure main();
         begin
@@ -211,11 +136,39 @@ class CheckCodeGenSuite(unittest.TestCase):
         end
         '''
         expectation = '2.02.1'
+        self.assertTrue(TestCodeGen.test(case, expectation, 509))
+
+    def test_10(self):
+        ''' test int - int '''
+        case = '''
+        procedure main();
+        begin
+            putInt(2 - 1);
+        end
+        '''
+        expectation = '1'
+        self.assertTrue(TestCodeGen.test(case, expectation, 510))
+
+    def test_11(self):
+        case = '''
+        var x, y: integer;
+        procedure main();
+        var x,y: real;
+        begin
+            foo();
+        end
+        procedure foo();
+        var x,y: real;
+        begin
+        end
+        '''
+        expectation = ''
         self.assertTrue(TestCodeGen.test(case, expectation, 511))
 
     def test_12(self):
         case = '''
         var x, y: integer;
+        var a, b, c: real;
         procedure main();
         var x,y: real;
         begin
@@ -231,35 +184,6 @@ class CheckCodeGenSuite(unittest.TestCase):
 
     def test_13(self):
         case = '''
-        var x, y: integer;
-        var a, b, c: real;
-        procedure main();
-        var x,y: real;
-        begin
-            foo();
-        end
-        procedure foo();
-        var x,y: real;
-        begin
-        end
-        '''
-        expectation = ''
-        self.assertTrue(TestCodeGen.test(case, expectation, 513))
-
-    def test_14(self):
-        case = '''
-        var a: integer;
-        procedure main();
-        begin
-            a := 1;
-            putInt(a);
-        end
-        '''
-        expectation = '1'
-        self.assertTrue(TestCodeGen.test(case, expectation, 514))
-
-    def test_15(self):
-        case = '''
         var a: real;
         procedure main();
         begin
@@ -268,9 +192,9 @@ class CheckCodeGenSuite(unittest.TestCase):
         end
         '''
         expectation = '1.34'
-        self.assertTrue(TestCodeGen.test(case, expectation, 515))
+        self.assertTrue(TestCodeGen.test(case, expectation, 513))
 
-    def test_16(self):
+    def test_14(self):
         case = '''
         var a: real;
         procedure main();
@@ -281,21 +205,9 @@ class CheckCodeGenSuite(unittest.TestCase):
         end
         '''
         expectation = '44.34'
-        self.assertTrue(TestCodeGen.test(case, expectation, 516))
+        self.assertTrue(TestCodeGen.test(case, expectation, 514))
 
-    def test_17(self):
-        case = '''
-        procedure main();
-        var a: integer;
-        begin
-            a := 1;
-            putInt(a);
-        end
-        '''
-        expectation = '1'
-        self.assertTrue(TestCodeGen.test(case, expectation, 517))
-
-    def test_18(self):
+    def test_15(self):
         case = '''
         procedure main();
         begin
@@ -303,9 +215,20 @@ class CheckCodeGenSuite(unittest.TestCase):
         end
         '''
         expectation = 'Hello World'
-        self.assertTrue(TestCodeGen.test(case, expectation, 518))
+        self.assertTrue(TestCodeGen.test(case, expectation, 515))
 
-    def test_19(self):
+    def test_16(self):
+        case = '''
+        procedure main();
+        begin
+            putInt(1 * 2);
+            putFloat(1.2 * 4);
+        end
+        '''
+        expectation = '24.8'
+        self.assertTrue(TestCodeGen.test(case, expectation, 516))
+
+    def test_17(self):
         case = '''
         procedure main();
         var a: boolean;
@@ -315,9 +238,9 @@ class CheckCodeGenSuite(unittest.TestCase):
         end
         '''
         expectation = 'true'
-        self.assertTrue(TestCodeGen.test(case, expectation, 519))
+        self.assertTrue(TestCodeGen.test(case, expectation, 517))
 
-    def test_20(self):
+    def test_18(self):
         case = '''
         procedure main();
         var a: integer;
@@ -328,22 +251,9 @@ class CheckCodeGenSuite(unittest.TestCase):
         end
         '''
         expectation = '-1'
-        self.assertTrue(TestCodeGen.test(case, expectation, 520))
+        self.assertTrue(TestCodeGen.test(case, expectation, 518))
 
-    def test_21(self):
-        case = '''
-        procedure main();
-        var a: real;
-        begin
-            a := 1.123;
-            a := -a;
-            putFloat(a);
-        end
-        '''
-        expectation = '-1.123'
-        self.assertTrue(TestCodeGen.test(case, expectation, 521))
-
-    def test_22(self):
+    def test_19(self):
         case = '''
         procedure main();
         var a: boolean;
@@ -354,9 +264,21 @@ class CheckCodeGenSuite(unittest.TestCase):
         end
         '''
         expectation = 'false'
-        self.assertTrue(TestCodeGen.test(case, expectation, 522))
+        self.assertTrue(TestCodeGen.test(case, expectation, 519))
 
-    def test_23(self):
+    def test_20(self):
+        case = '''
+        var a: integer;
+        procedure main();
+        begin
+            a := 1;
+            putInt(a);
+        end
+        '''
+        expectation = '1'
+        self.assertTrue(TestCodeGen.test(case, expectation, 520))
+
+    def test_21(self):
         case = '''
         procedure main();
         var a: boolean;
@@ -368,9 +290,21 @@ class CheckCodeGenSuite(unittest.TestCase):
         end
         '''
         expectation = 'true'
-        self.assertTrue(TestCodeGen.test(case, expectation, 523))
+        self.assertTrue(TestCodeGen.test(case, expectation, 521))
 
-    def test_24(self):
+    def test_22(self):
+        case = '''
+        procedure main();
+        var a: integer;
+        begin
+            a := 1;
+            putInt(a);
+        end
+        '''
+        expectation = '1'
+        self.assertTrue(TestCodeGen.test(case, expectation, 522))
+
+    def test_23(self):
         case = '''
         procedure main();
         var a: integer;
@@ -385,6 +319,19 @@ class CheckCodeGenSuite(unittest.TestCase):
         end
         '''
         expectation = '10'
+        self.assertTrue(TestCodeGen.test(case, expectation, 523))
+
+    def test_24(self):
+        case = '''
+        procedure main();
+        var a: real;
+        begin
+            a := 1.123;
+            a := -a;
+            putFloat(a);
+        end
+        '''
+        expectation = '-1.123'
         self.assertTrue(TestCodeGen.test(case, expectation, 524))
 
     def test_25(self):
@@ -484,7 +431,7 @@ class CheckCodeGenSuite(unittest.TestCase):
             putInt(b);
         end
         '''
-        expectation = '4'
+        expectation = '5'
         self.assertTrue(TestCodeGen.test(case, expectation, 529))
 
     def test_30(self):
@@ -504,3 +451,698 @@ class CheckCodeGenSuite(unittest.TestCase):
         '''
         expectation = '3'
         self.assertTrue(TestCodeGen.test(case, expectation, 530))
+
+    def test_31(self):
+        case = '''
+        
+        procedure main();
+            
+        begin
+            putBool(1 < 2 and then 3 > 4);
+
+        end
+        '''
+        expectation = 'false'
+        self.assertTrue(TestCodeGen.test(case, expectation, 531))
+
+    def test_32(self):
+        case = '''
+        
+        procedure main();
+            
+        begin
+            putBool(1 < 2 or else 3 > 4);
+
+        end
+        '''
+        expectation = 'true'
+        self.assertTrue(TestCodeGen.test(case, expectation, 532))
+
+    def test_33(self):
+        case = '''
+        function foo(): real;
+        begin
+            return 3.4;
+        end
+        procedure main();
+            var a: real;
+        begin
+            a:= foo();
+            putFloat(a);
+        end
+        '''
+        expectation = '3.4'
+        self.assertTrue(TestCodeGen.test(case, expectation, 533))
+
+    def test_34(self):
+        case = '''
+        function foo(): boolean;
+        begin
+            return true;
+        end
+        procedure main();
+            var a: boolean;
+        begin
+            a:= foo();
+            putBool(a);
+        end
+        '''
+        expectation = 'true'
+        self.assertTrue(TestCodeGen.test(case, expectation, 534))
+
+    def test_35(self):
+        case = '''
+
+        procedure main();
+            
+        begin
+        putBool(1<2 and then 2 < 3 and then 4<3);
+        end
+        '''
+        expectation = 'false'
+        self.assertTrue(TestCodeGen.test(case, expectation, 535))
+
+    def test_36(self):
+        case = '''
+
+        procedure main();
+            
+        begin
+        if (1<2) then
+            begin
+                if(3<4) then
+                    begin
+                        putInt(3);
+                    end
+            end
+        end
+        '''
+        expectation = '3'
+        self.assertTrue(TestCodeGen.test(case, expectation, 536))
+
+    def test_37(self):
+        case = '''
+
+        procedure main();
+            var a, b, c: integer;
+        begin
+            c:=0;
+            for a:=3 to 7 do
+                begin
+                    for b:=5 downto 3 do
+                        begin
+                            c:=c+1;
+                            b:=b-1;
+                        end
+                    a:=a+1;
+                end
+
+            putInt(c);
+        end
+        '''
+        expectation = '15'
+        self.assertTrue(TestCodeGen.test(case, expectation, 537))
+
+    def test_38(self):
+        case = '''
+        
+        procedure main();
+            
+        begin
+            putBool(1 > 2 or else 3 > 4 or else 4 < 5);
+
+        end
+        '''
+        expectation = 'true'
+        self.assertTrue(TestCodeGen.test(case, expectation, 538))
+
+    def test_39(self):
+        case = '''
+        
+        procedure main();
+            
+        begin
+            putBool(1 > 2 or else 3 > 4 or else 4 > 5);
+
+        end
+        '''
+        expectation = 'false'
+        self.assertTrue(TestCodeGen.test(case, expectation, 539))
+
+    def test_40(self):
+        case = '''
+        
+        procedure main();
+            
+        begin
+            putBool((1 > 2 or else 3 < 4) and (1 < 2));
+
+        end
+        '''
+        expectation = 'true'
+        self.assertTrue(TestCodeGen.test(case, expectation, 540))
+
+    def test_41(self):
+        case = '''
+        
+        procedure main();
+            
+        begin
+            putBool((1 > 2 and then 3 < 4) and (1 < 2));
+
+        end
+        '''
+        expectation = 'false'
+        self.assertTrue(TestCodeGen.test(case, expectation, 541))
+
+    def test_42(self):
+        case = '''
+        
+        procedure main();
+            
+        begin
+            putBool((1 > 2 and then 3 < 4) or (1 < 2));
+
+        end
+        '''
+        expectation = 'true'
+        self.assertTrue(TestCodeGen.test(case, expectation, 542))
+
+    def test_43(self):
+        case = '''
+        
+        procedure main();
+            
+        begin
+            putBool((1 > 2 and then 3 < 4) or (1 < 2 and then 2 < 1));
+
+        end
+        '''
+        expectation = 'false'
+        self.assertTrue(TestCodeGen.test(case, expectation, 543))
+
+    def test_44(self):
+        case = '''
+        
+        procedure main();
+            
+        begin
+            putInt(5 div 3);
+
+        end
+        '''
+        expectation = '1'
+        self.assertTrue(TestCodeGen.test(case, expectation, 544))
+
+    def test_45(self):
+        case = '''
+        
+        procedure main();
+            
+        begin
+            putInt(5 mod 3);
+
+        end
+        '''
+        expectation = '2'
+        self.assertTrue(TestCodeGen.test(case, expectation, 545))
+
+    def test_46(self):
+        case = '''
+        
+        function foo(a: integer; b: integer): integer;
+        begin
+            return a + b;
+        end
+        procedure main();
+            var c: integer;
+        begin
+            c:=foo(1,2);
+            putInt(c);
+
+        end
+        '''
+        expectation = '3'
+        self.assertTrue(TestCodeGen.test(case, expectation, 546))
+
+    def test_46(self):
+        case = '''
+        
+        function foo(a: integer; b: real): real;
+        begin
+            return a + b;
+        end
+        procedure main();
+            var c: real;
+        begin
+            c:=foo(1,2);
+            putFloat(c);
+
+        end
+        '''
+        expectation = '3.0'
+        self.assertTrue(TestCodeGen.test(case, expectation, 546))
+
+    def test_47(self):
+        ''' test redeclared func - func '''
+        case = """
+        procedure main();
+        begin
+            putInt(foo());
+            putFloat(foo1());
+            return;
+        end
+
+        function foo(): integer;
+        begin
+            return 1;
+        end
+
+        function foo1(): real;
+        begin
+            return 1.0;
+        end
+        """
+        expectation = '11.0'
+        self.assertTrue(TestCodeGen.test(case, expectation, 547))
+
+    def test_48(self):
+        ''' test redeclared func - func '''
+        case = """
+        procedure main();
+        var a, b: real;
+        begin
+            a := 100;
+            b := 0;
+            while (a - b <> 0) do
+                b := b + 1;
+
+            if b = 100.0 then
+            begin
+                putString("ok");
+                return;
+            end
+        end
+        """
+        expectation = 'ok'
+        self.assertTrue(TestCodeGen.test(case, expectation, 548))
+
+    def test_49(self):
+        input = """ var a:real;
+                    procedure main(); 
+                                                                            
+                    begin
+                        a:=9.5;
+                        with a,b: integer;
+                        do
+                        begin
+                            b:=859;
+                            a:= b-179;
+                            //putInt(a);
+                        end
+                        putFloat(a);                          
+                    end 
+                                        
+                """
+        expect = "9.5"
+        self.assertTrue(TestCodeGen.test(input,expect,549))
+
+    def test_50(self):
+        input = """ var a:real;
+                    function foo(a: integer; b:integer; c: integer): integer;
+                    begin
+                        return a div b mod c;
+                    end
+                    procedure main(); 
+                        
+                    begin
+                            putInt(foo(15,2,2));
+                    end 
+                                        
+                """
+        expect = "1"
+        self.assertTrue(TestCodeGen.test(input,expect,550))
+
+    def test_51(self):
+        input = """ var a:real;
+                    function foo(): boolean;
+                    begin
+                        return (1 > 3 or else 3 > 4) or True;
+                    end
+                    procedure main(); 
+                        
+                    begin
+                            putBool(foo());
+                    end 
+                                        
+                """
+        expect = "true"
+        self.assertTrue(TestCodeGen.test(input,expect,551))
+
+    def test_52(self):
+        input = """ var a:real;
+                    procedure foo();
+                    begin
+                        putBool((1 > 3 or else 3 > 4) or True);
+                    end
+                    procedure main(); 
+                        
+                    begin
+                            foo();
+                    end 
+                                        
+                """
+        expect = "true"
+        self.assertTrue(TestCodeGen.test(input,expect,552))
+
+    def test_53(self):
+        input = """ var a:integer;
+                    procedure foo();
+                    begin
+                        for a:=3 to 7 do
+                            begin
+                                a := a + 1;
+                            end
+                        putInt(a);
+                    end
+                    procedure main(); 
+                        
+                    begin
+                            foo();
+                    end 
+                                        
+                """
+        expect = "8"
+        self.assertTrue(TestCodeGen.test(input,expect,553))
+
+    def test_54(self):
+        input = """ var a, b:integer;
+                    procedure foo();
+                    begin
+                        b:=0;
+                        for a:=3 to 7 do
+                            begin
+                                
+                                a := a + 1;
+                                while (a < 5) do
+                                    begin
+                                        b:=b+1;
+                                        a:=a+1;
+                                    end
+                            end
+                        putInt(b);
+                    end
+                    procedure main(); 
+                        
+                    begin
+                            foo();
+                    end 
+                                        
+                """
+        expect = "1"
+        self.assertTrue(TestCodeGen.test(input,expect,554))
+
+    def test_55(self):
+        input = """ var a, b:integer;
+                    procedure foo();
+                    begin
+                        b:=0;
+                        for a:=3 to 7 do
+                            begin
+                                
+                                a := a + 1;
+                                while (a < 5) do
+                                    begin
+                                        b:=b+1;
+                                        a:=a+1;
+                                    end
+                            end
+                        putInt(b);
+                    end
+                    procedure main(); 
+                        
+                    begin
+                            foo();
+                    end 
+                                        
+                """
+        expect = "1"
+        self.assertTrue(TestCodeGen.test(input,expect,555))
+
+    def test_56(self):
+        input = """ var a, b:integer;
+                    procedure foo();
+                    begin
+                        with a, b: integer ; do
+                            with c: integer; do
+                                begin 
+                                    a:=1;
+                                    b:= 3;
+                                    c:=4;
+                                    putInt(a+b*c);
+                                end
+                    end
+                    procedure main(); 
+                        
+                    begin
+                            foo();
+                    end 
+                                        
+                """
+        expect = "13"
+        self.assertTrue(TestCodeGen.test(input,expect,556))
+
+    def test_57(self):
+        input = """ var a, b:integer;
+                    procedure foo();
+                    begin
+                        with a, b: integer ; do
+                            with c: real; do
+                                begin 
+                                    a:=1;
+                                    b:= 3;
+                                    c:=4;
+                                    putFloat(a+b*c);
+                                end
+                    end
+                    procedure main(); 
+                        
+                    begin
+                            foo();
+                    end 
+                                        
+                """
+        expect = "13.0"
+        self.assertTrue(TestCodeGen.test(input,expect,557))
+
+    def test_58(self):
+        input = """ var a, b:integer;
+                    procedure foo();
+                    begin
+                        with a, b: integer ; do
+                            with c: integer; do
+                                begin
+                                a:= 0;
+                                b:=0;
+                                c:=3;
+                                while(a<>c) do
+                                    begin
+                                        a:= a+1;
+                                        b:=b+1;
+                                    end
+                            putInt(c);
+                            end
+                    end
+                    procedure main(); 
+                        
+                    begin
+                            foo();
+                    end 
+                                        
+                """
+        expect = "3"
+        self.assertTrue(TestCodeGen.test(input,expect,558))
+
+    def test_59(self):
+        input = """ var a, b:integer;
+                    procedure foo();
+                    begin
+                        with a, b: integer ; do
+                            with c: integer; do
+                                begin
+                                a:= 0;
+                                b:=0;
+                                c:=3;
+                                while(a>c) do
+                                    begin
+                                        a:= a+1;
+                                        b:=b+1;
+                                    end
+                            putInt(b);
+                            end
+                    end
+                    procedure main(); 
+                        
+                    begin
+                            foo();
+                    end 
+                                        
+                """
+        expect = "0"
+        self.assertTrue(TestCodeGen.test(input,expect,559))
+
+    def test_60(self):
+        input = """ var c, b:integer;
+                    procedure foo(a, b: integer);
+                        
+                    begin
+                        for c:=a to b do
+                            begin
+                                c:=c+1;
+                                putInt(c);
+                            end
+                    end
+                    procedure main(); 
+                        
+                    begin
+                            foo(1,2);
+                    end 
+                                        
+                """
+        expect = "23"
+        self.assertTrue(TestCodeGen.test(input,expect,560))
+
+    def test_61(self):
+        input = """ var c, b:integer;
+                    procedure foo(a, b: integer);
+                        
+                    begin
+                    c:=3;
+                        if(a<b and then a<c) then
+                            putInt(1);
+                        else
+                            putInt(0);
+                    end
+                    procedure main(); 
+                        
+                    begin
+                            foo(1,2);
+                    end 
+                                        
+                """
+        expect = "1"
+        self.assertTrue(TestCodeGen.test(input,expect,561))
+
+    def test_62(self):
+        input = """ var c, b:integer;
+                    procedure foo(a, b: integer);
+                        
+                    begin
+                    c:=3;
+                        if(a<b and then a<c) then
+                            putInt(1);
+                        else
+                            putInt(0);
+                    end
+                    procedure main(); 
+                        
+                    begin
+                            foo(5,2);
+                    end 
+                                        
+                """
+        expect = "0"
+        self.assertTrue(TestCodeGen.test(input,expect,562))
+
+    def test_63(self):
+        input = """ var c, b:integer;
+                    procedure foo(a, b: integer);
+                        
+                    begin
+                    c:=3;
+                        if(a<b or else a<c) then
+                            putInt(1);
+                        else
+                            putInt(0);
+                    end
+                    procedure main(); 
+                        
+                    begin
+                            foo(2,2);
+                    end 
+                                        
+                """
+        expect = "1"
+        self.assertTrue(TestCodeGen.test(input,expect,563))
+
+    def test_64(self):
+        input = """ var c, b:integer;
+                    procedure foo(a, b: integer);
+                        
+                    begin
+                    c:=3;
+                        if(a mod b = 0) then
+                            putInt(1);
+                        else
+                            putInt(0);
+                    end
+                    procedure main(); 
+                        
+                    begin
+                            foo(2,2);
+                    end 
+                                        
+                """
+        expect = "1"
+        self.assertTrue(TestCodeGen.test(input,expect,564))
+
+    def test_65(self):
+        input = """ var c, b:integer;
+                    procedure foo(a, b: integer);
+                        
+                    begin
+                    c:=3;
+                        if(a mod b <> 0) then
+                            putInt(1);
+                        else
+                            putInt(0);
+                    end
+                    procedure main(); 
+                        
+                    begin
+                            foo(2,2);
+                    end 
+                                        
+                """
+        expect = "0"
+        self.assertTrue(TestCodeGen.test(input,expect,565))
+
+    def test_66(self):
+        input = """ var c, b:integer;
+                    procedure foo(a, b: integer);
+                        var d: boolean;
+                    begin
+                        d:=foo1();
+                        putBool(d);
+                        if (a = 2) then
+                            for a:= 1 to 7 do
+                                begin
+                                    a:=a + 1;
+                                    if (a=5) then break;
+                                    else continue;
+                                end
+                        putInt(a);
+                    end
+                    procedure main(); 
+                        
+                    begin
+                            foo(2,2);
+                    end 
+
+                    function foo1(): boolean;
+                    begin
+                        return True;
+                    end
+                """
+        expect = "true5"
+        self.assertTrue(TestCodeGen.test(input,expect,566))

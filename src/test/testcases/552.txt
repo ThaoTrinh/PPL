@@ -1,0 +1,12 @@
+ var a:real;
+                    procedure foo();
+                    begin
+                        putBool((1 > 3 or else 3 > 4) or True);
+                    end
+                    procedure main(); 
+                        
+                    begin
+                            foo();
+                    end 
+                                        
+                

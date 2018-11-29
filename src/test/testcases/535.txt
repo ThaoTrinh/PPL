@@ -1,0 +1,8 @@
+
+
+        procedure main();
+            
+        begin
+        putBool(1<2 and then 2 < 3 and then 4<3);
+        end
+        

@@ -538,6 +538,10 @@ class Emitter():
         frame.pop()
         return self.jvm.emitIFEQ(label)
 
+    def emitIFNE(self, label, frame):
+        frame.pop()
+        return self.jvm.emitIFNE(label)
+
     def emitIFICMPGT(self, label, frame):
         #label: Int
         #frame: Frame
@@ -592,6 +596,12 @@ class Emitter():
         if type(in_) is IntType:
             frame.pop()
             return self.jvm.emitIRETURN()
+        elif type(in_) is FloatType:
+            frame.pop()
+            return self.jvm.emitFRETURN()
+        elif type(in_) is BoolType:
+            frame.pop()
+            return self.jvm.emitIRETURN()
         elif type(in_) is VoidType:
             return self.jvm.emitRETURN()
 
@@ -642,7 +652,7 @@ class Emitter():
 
     def emitEPILOG(self):
         file = open(self.filename, "w")
-
+        # input([x for x in self.buff])
         file.write(''.join(self.buff))
         file.close()
 

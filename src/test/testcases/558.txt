@@ -1,0 +1,24 @@
+ var a, b:integer;
+                    procedure foo();
+                    begin
+                        with a, b: integer ; do
+                            with c: integer; do
+                                begin
+                                a:= 0;
+                                b:=0;
+                                c:=3;
+                                while(a<>c) do
+                                    begin
+                                        a:= a+1;
+                                        b:=b+1;
+                                    end
+                            putInt(c);
+                            end
+                    end
+                    procedure main(); 
+                        
+                    begin
+                            foo();
+                    end 
+                                        
+                

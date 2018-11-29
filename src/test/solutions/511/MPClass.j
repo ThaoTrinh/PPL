@@ -1,25 +1,29 @@
 .source MPClass.java
 .class public MPClass
 .super java.lang.Object
+.field static x I
+.field static y I
 
 .method public static main([Ljava/lang/String;)V
 .var 0 is args [Ljava/lang/String; from Label0 to Label1
+.var 1 is x F from Label0 to Label1
+.var 2 is y F from Label0 to Label1
 Label0:
-	iconst_4
-	i2f
-	iconst_2
-	i2f
-	fdiv
-	invokestatic io/putFloat(F)V
-	ldc 4.2
-	iconst_2
-	i2f
-	fdiv
-	invokestatic io/putFloat(F)V
+	invokestatic MPClass/foo()V
 Label1:
 	return
-.limit stack 5
-.limit locals 1
+.limit stack 0
+.limit locals 3
+.end method
+
+.method public static foo()V
+.var 0 is x F from Label0 to Label1
+.var 1 is y F from Label0 to Label1
+Label0:
+Label1:
+	return
+.limit stack 0
+.limit locals 2
 .end method
 
 .method public <init>()V

@@ -1,0 +1,17 @@
+ var c, b:integer;
+                    procedure foo(a, b: integer);
+                        
+                    begin
+                    c:=3;
+                        if(a<b or else a<c) then
+                            putInt(1);
+                        else
+                            putInt(0);
+                    end
+                    procedure main(); 
+                        
+                    begin
+                            foo(2,2);
+                    end 
+                                        
+                

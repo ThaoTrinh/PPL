@@ -1,9 +1,8 @@
 
         procedure main();
-        var a: boolean;
+        var a: integer;
         begin
-            a := True;
-            a := not a;
-            putBool(a);
+            a := 1;
+            putInt(a);
         end
         

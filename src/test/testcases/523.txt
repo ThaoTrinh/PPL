@@ -1,10 +1,13 @@
 
         procedure main();
-        var a: boolean;
+        var a: integer;
+            b: integer;
         begin
-            if (True) then
-                putString("true");
-            else
-                putString("false");
+            a := 10;
+            b := 0 ;
+            while(b < a) do
+                b := b + 1 ;
+
+            putInt(b);
         end
         

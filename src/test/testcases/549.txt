@@ -1,0 +1,16 @@
+ var a:real;
+                    procedure main(); 
+                                                                            
+                    begin
+                        a:=9.5;
+                        with a,b: integer;
+                        do
+                        begin
+                            b:=859;
+                            a:= b-179;
+                            //putInt(a);
+                        end
+                        putFloat(a);                          
+                    end 
+                                        
+                

@@ -5,13 +5,14 @@
 .method public static main([Ljava/lang/String;)V
 .var 0 is args [Ljava/lang/String; from Label0 to Label1
 Label0:
+	ldc 1.1
 	iconst_2
-	iconst_1
-	isub
-	invokestatic io/putInt(I)V
+	i2f
+	fadd
+	invokestatic io/putFloat(F)V
 Label1:
 	return
-.limit stack 4
+.limit stack 3
 .limit locals 1
 .end method
 

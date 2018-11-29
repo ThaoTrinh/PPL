@@ -1,6 +1,6 @@
 
         procedure main();
         begin
-            putInt(1 + 1);
+            putFloat(1.0 + 2.3);
         end
         

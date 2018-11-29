@@ -1,8 +1,9 @@
 
-        var a: integer;
+        var a: real;
         procedure main();
         begin
-            a := 1;
-            putInt(a);
+            a := 43;
+            a := 1.34 + a;
+            putFloat(a);
         end
         

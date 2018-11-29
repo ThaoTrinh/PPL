@@ -42,7 +42,10 @@ def main(argv):
             getAndTest(CheckerSuite)
         elif argv[1] == 'CodeGenSuite':
             from CodeGenSuite import CheckCodeGenSuite
-            getAndTest(CheckCodeGenSuite, argv[2])
+            if len(argv) == 3:
+                getAndTest(CheckCodeGenSuite, argv[2])
+            else:
+                getAndTest(CheckCodeGenSuite)
         else:
             printUsage()
     else:

@@ -1,9 +1,10 @@
 
         procedure main();
-        var a: real;
+        var a: boolean;
         begin
-            a := 1.123;
-            a := -a;
-            putFloat(a);
+            if (True) then
+                putString("true");
+            else
+                putString("false");
         end
         

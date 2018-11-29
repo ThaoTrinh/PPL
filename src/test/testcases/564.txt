@@ -1,0 +1,17 @@
+ var c, b:integer;
+                    procedure foo(a, b: integer);
+                        
+                    begin
+                    c:=3;
+                        if(a mod b = 0) then
+                            putInt(1);
+                        else
+                            putInt(0);
+                    end
+                    procedure main(); 
+                        
+                    begin
+                            foo(2,2);
+                    end 
+                                        
+                

@@ -1,0 +1,12 @@
+ var a:real;
+                    function foo(a: integer; b:integer; c: integer): integer;
+                    begin
+                        return a div b mod c;
+                    end
+                    procedure main(); 
+                        
+                    begin
+                            putInt(foo(15,2,2));
+                    end 
+                                        
+                

@@ -1,8 +1,8 @@
 
         procedure main();
-        var a: integer;
+        var a: boolean;
         begin
-            a := 1;
-            putInt(a);
+            a := 1 < 2;
+            putBool(a);
         end
         

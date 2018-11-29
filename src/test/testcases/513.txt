@@ -1,13 +1,8 @@
 
-        var x, y: integer;
-        var a, b, c: real;
+        var a: real;
         procedure main();
-        var x,y: real;
         begin
-            foo();
-        end
-        procedure foo();
-        var x,y: real;
-        begin
+            a := 1.34;
+            putFloat(a);
         end
         

@@ -1,0 +1,19 @@
+ var a, b:integer;
+                    procedure foo();
+                    begin
+                        with a, b: integer ; do
+                            with c: integer; do
+                                begin 
+                                    a:=1;
+                                    b:= 3;
+                                    c:=4;
+                                    putInt(a+b*c);
+                                end
+                    end
+                    procedure main(); 
+                        
+                    begin
+                            foo();
+                    end 
+                                        
+                

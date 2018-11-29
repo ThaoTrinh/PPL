@@ -1,1 +1,6 @@
-Program([FuncDecl(Id(main),[],VoidType(),[],[CallStmt(Id(putFloat),[FloatLiteral(5.0)])])])
+
+        procedure main();
+        begin
+            putInt(1 + 1);
+        end
+        

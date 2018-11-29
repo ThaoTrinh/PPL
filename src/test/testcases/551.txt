@@ -1,0 +1,12 @@
+ var a:real;
+                    function foo(): boolean;
+                    begin
+                        return (1 > 3 or else 3 > 4) or True;
+                    end
+                    procedure main(); 
+                        
+                    begin
+                            putBool(foo());
+                    end 
+                                        
+                

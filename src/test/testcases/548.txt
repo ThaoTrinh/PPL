@@ -1,0 +1,17 @@
+
+        procedure main();
+        var a, b: real;
+        begin
+            a := 100;
+            b := 0;
+            while (a - b <> 0) do
+                b := b + 1;
+
+            putFloat(b);
+            if b = 100.0 then
+            begin
+                putString("ok");
+                return;
+            end
+        end
+        

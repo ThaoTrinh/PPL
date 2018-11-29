@@ -14,7 +14,7 @@ Label0:
 Label2:
 	iload_1
 	bipush 7
-	if_icmpge Label4
+	if_icmpgt Label4
 	iconst_1
 	goto Label5
 Label4:

@@ -1,15 +1,12 @@
 .source MPClass.java
 .class public MPClass
 .super java.lang.Object
-.field static a F
 
 .method public static main([Ljava/lang/String;)V
 .var 0 is args [Ljava/lang/String; from Label0 to Label1
 Label0:
-	ldc 1.34
-	putstatic MPClass/a F
-	getstatic MPClass/a F
-	invokestatic io/putFloat(F)V
+	ldc "Hello World"
+	invokestatic io/putString(Ljava/lang/String;)V
 Label1:
 	return
 .limit stack 1

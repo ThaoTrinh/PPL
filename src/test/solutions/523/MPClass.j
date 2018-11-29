@@ -4,21 +4,35 @@
 
 .method public static main([Ljava/lang/String;)V
 .var 0 is args [Ljava/lang/String; from Label0 to Label1
-.var 1 is a Z from Label0 to Label1
+.var 1 is a I from Label0 to Label1
+.var 2 is b I from Label0 to Label1
 Label0:
-	iconst_1
-	ifeq Label2
-	ldc "true"
-	invokestatic io/putString(Ljava/lang/String;)V
-	goto Label3
+	bipush 10
+	istore_1
+	iconst_0
+	istore_2
 Label2:
-	ldc "false"
-	invokestatic io/putString(Ljava/lang/String;)V
+	iload_2
+	iload_1
+	if_icmpge Label4
+	iconst_1
+	goto Label5
+Label4:
+	iconst_0
+Label5:
+	ifeq Label3
+	iload_2
+	iconst_1
+	iadd
+	istore_2
+	goto Label2
 Label3:
+	iload_2
+	invokestatic io/putInt(I)V
 Label1:
 	return
-.limit stack 2
-.limit locals 2
+.limit stack 7
+.limit locals 3
 .end method
 
 .method public <init>()V

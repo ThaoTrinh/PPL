@@ -4,18 +4,20 @@
 
 .method public static main([Ljava/lang/String;)V
 .var 0 is args [Ljava/lang/String; from Label0 to Label1
-.var 1 is a F from Label0 to Label1
+.var 1 is a Z from Label0 to Label1
 Label0:
-	ldc 1.123
-	fstore_1
-	fload_1
-	fneg
-	fstore_1
-	fload_1
-	invokestatic io/putFloat(F)V
+	iconst_1
+	ifeq Label2
+	ldc "true"
+	invokestatic io/putString(Ljava/lang/String;)V
+	goto Label3
+Label2:
+	ldc "false"
+	invokestatic io/putString(Ljava/lang/String;)V
+Label3:
 Label1:
 	return
-.limit stack 1
+.limit stack 2
 .limit locals 2
 .end method
 

@@ -7,8 +7,9 @@
 .var 1 is a Z from Label0 to Label1
 Label0:
 	iconst_1
-	iconst_2
-	if_icmpge Label2
+	istore_1
+	iload_1
+	ifgt Label2
 	iconst_1
 	goto Label3
 Label2:

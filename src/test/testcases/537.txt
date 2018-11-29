@@ -1,0 +1,19 @@
+
+
+        procedure main();
+            var a, b, c: integer;
+        begin
+            c:=0;
+            for a:=3 to 7 do
+                begin
+                    for b:=5 downto 3 do
+                        begin
+                            c:=c+1;
+                            b:=b-1;
+                        end
+                    a:=a+1;
+                end
+
+            putInt(c);
+        end
+        

@@ -5,9 +5,9 @@
 .method public static main([Ljava/lang/String;)V
 .var 0 is args [Ljava/lang/String; from Label0 to Label1
 Label0:
-	iconst_2
+	ldc 2.4
+	iconst_1
 	i2f
-	ldc 1.1
 	fsub
 	invokestatic io/putFloat(F)V
 Label1:

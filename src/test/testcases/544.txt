@@ -1,0 +1,9 @@
+
+        
+        procedure main();
+            
+        begin
+            putInt(5 div 3);
+
+        end
+        

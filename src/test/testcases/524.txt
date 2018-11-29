@@ -1,13 +1,9 @@
 
         procedure main();
-        var a: integer;
-            b: integer;
+        var a: real;
         begin
-            a := 10;
-            b := 0 ;
-            while(b < a) do
-                b := b + 1 ;
-
-            putInt(b);
+            a := 1.123;
+            a := -a;
+            putFloat(a);
         end
         

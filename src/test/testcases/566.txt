@@ -1,0 +1,26 @@
+ var c, b:integer;
+                    procedure foo(a, b: integer);
+                        var d: boolean;
+                    begin
+                        d:=foo1();
+                        putBool(d);
+                        if (a = 2) then
+                            for a:= 1 to 7 do
+                                begin
+                                    a:=a + 1;
+                                    if (a=5) then break;
+                                    else continue;
+                                end
+                        putInt(a);
+                    end
+                    procedure main(); 
+                        
+                    begin
+                            foo(2,2);
+                    end 
+
+                    function foo1(): boolean;
+                    begin
+                        return True;
+                    end
+                
