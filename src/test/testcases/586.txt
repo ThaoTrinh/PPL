@@ -1,0 +1,9 @@
+procedure main();
+                Begin
+                    with a:integer; b:real; do
+                    begin
+                        a := 6;
+                        b := 10;
+                        putFloat(a+b);
+                    end
+                end

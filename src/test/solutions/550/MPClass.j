@@ -14,6 +14,7 @@ Label0:
 	iload_2
 	irem
 	ireturn
+	nop
 Label1:
 .limit stack 2
 .limit locals 3
@@ -27,6 +28,7 @@ Label0:
 	iconst_2
 	invokestatic MPClass/foo(III)I
 	invokestatic io/putInt(I)V
+	nop
 Label1:
 	return
 .limit stack 6
@@ -38,6 +40,7 @@ Label1:
 Label0:
 	aload_0
 	invokespecial java/lang/Object/<init>()V
+	nop
 Label1:
 	return
 .limit stack 1

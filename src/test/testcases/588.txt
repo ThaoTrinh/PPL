@@ -1,0 +1,8 @@
+procedure main();
+                var a,b:integer;
+                Begin
+                    a := 100;
+                    b:= 60;
+                    while(true) do return;
+                    putInt(a);
+                end

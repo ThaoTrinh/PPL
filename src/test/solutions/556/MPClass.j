@@ -25,6 +25,7 @@ Label4:
 	invokestatic io/putInt(I)V
 Label5:
 Label3:
+	nop
 Label1:
 	return
 .limit stack 6
@@ -35,6 +36,7 @@ Label1:
 .var 0 is args [Ljava/lang/String; from Label0 to Label1
 Label0:
 	invokestatic MPClass/foo()V
+	nop
 Label1:
 	return
 .limit stack 0
@@ -46,6 +48,7 @@ Label1:
 Label0:
 	aload_0
 	invokespecial java/lang/Object/<init>()V
+	nop
 Label1:
 	return
 .limit stack 1

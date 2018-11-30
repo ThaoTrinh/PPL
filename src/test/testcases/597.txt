@@ -1,0 +1,10 @@
+ 
+            var a: integer;
+                b: real;    
+            procedure main();
+            var a: string;
+            begin
+                putStringLn("khoi");
+            end
+            var c: real;
+            

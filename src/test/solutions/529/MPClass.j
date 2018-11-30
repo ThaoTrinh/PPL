@@ -11,31 +11,34 @@ Label0:
 	istore_2
 	iconst_3
 	istore_1
-Label2:
+Label4:
 	iload_1
 	bipush 7
-	if_icmpgt Label4
+	if_icmpgt Label5
 	iconst_1
-	goto Label5
-Label4:
-	iconst_0
+	goto Label6
 Label5:
+	iconst_0
+Label6:
 	ifeq Label3
 	iload_2
 	iconst_1
 	iadd
 	istore_2
+	goto Label2
+Label2:
 	iload_1
 	iconst_1
 	iadd
 	istore_1
-	goto Label2
+	goto Label4
 Label3:
 	iload_2
 	invokestatic io/putInt(I)V
+	nop
 Label1:
 	return
-.limit stack 9
+.limit stack 8
 .limit locals 3
 .end method
 
@@ -44,6 +47,7 @@ Label1:
 Label0:
 	aload_0
 	invokespecial java/lang/Object/<init>()V
+	nop
 Label1:
 	return
 .limit stack 1

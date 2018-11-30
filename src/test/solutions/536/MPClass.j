@@ -31,6 +31,7 @@ Label9:
 	goto Label5
 Label4:
 Label5:
+	nop
 Label1:
 	return
 .limit stack 10
@@ -42,6 +43,7 @@ Label1:
 Label0:
 	aload_0
 	invokespecial java/lang/Object/<init>()V
+	nop
 Label1:
 	return
 .limit stack 1

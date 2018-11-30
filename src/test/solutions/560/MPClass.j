@@ -10,27 +10,30 @@
 Label0:
 	iload_0
 	putstatic MPClass/c I
-Label2:
+Label4:
 	getstatic MPClass/c I
 	iload_1
-	if_icmpgt Label4
+	if_icmpgt Label5
 	iconst_1
-	goto Label5
-Label4:
-	iconst_0
+	goto Label6
 Label5:
+	iconst_0
+Label6:
 	ifeq Label3
+	getstatic MPClass/c I
+	invokestatic io/putInt(I)V
+	goto Label2
+Label2:
 	getstatic MPClass/c I
 	iconst_1
 	iadd
 	putstatic MPClass/c I
-	getstatic MPClass/c I
-	invokestatic io/putInt(I)V
-	goto Label2
+	goto Label4
 Label3:
+	nop
 Label1:
 	return
-.limit stack 5
+.limit stack 4
 .limit locals 2
 .end method
 
@@ -40,6 +43,7 @@ Label0:
 	iconst_1
 	iconst_2
 	invokestatic MPClass/foo(II)V
+	nop
 Label1:
 	return
 .limit stack 4
@@ -51,6 +55,7 @@ Label1:
 Label0:
 	aload_0
 	invokespecial java/lang/Object/<init>()V
+	nop
 Label1:
 	return
 .limit stack 1

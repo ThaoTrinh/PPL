@@ -10,6 +10,7 @@ Label0:
 	invokestatic MPClass/foo1()F
 	invokestatic io/putFloat(F)V
 	return
+	nop
 Label1:
 	return
 .limit stack 1
@@ -20,6 +21,7 @@ Label1:
 Label0:
 	iconst_1
 	ireturn
+	nop
 Label1:
 .limit stack 2
 .limit locals 0
@@ -29,6 +31,7 @@ Label1:
 Label0:
 	ldc 1.0
 	freturn
+	nop
 Label1:
 .limit stack 1
 .limit locals 0
@@ -39,6 +42,7 @@ Label1:
 Label0:
 	aload_0
 	invokespecial java/lang/Object/<init>()V
+	nop
 Label1:
 	return
 .limit stack 1

@@ -1,0 +1,11 @@
+ 
+            var a: integer;
+                b: real;    
+            procedure main();
+            var d: boolean;
+            begin
+                d := true;
+                putBool(not ((d and (1<2)) and then 5>4 and then 2>-3));
+            end
+            var c: real;
+            

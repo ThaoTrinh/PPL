@@ -10,6 +10,7 @@ Label0:
 	istore_1
 	iload_1
 	invokestatic io/putInt(I)V
+	nop
 Label1:
 	return
 .limit stack 2
@@ -21,6 +22,7 @@ Label1:
 Label0:
 	aload_0
 	invokespecial java/lang/Object/<init>()V
+	nop
 Label1:
 	return
 .limit stack 1

@@ -1,0 +1,23 @@
+ var a, b:integer;
+                    procedure foo();
+                    begin
+                        b:=0;
+                        for a:=3 to 7 do
+                            begin
+                                
+                                a := a + 1;
+                                while (a < 5) do
+                                    begin
+                                        b:=b+1;
+                                        a:=a+1;
+                                    end
+                            end
+                        putInt(b);
+                    end
+                    procedure main(); 
+                        
+                    begin
+                            foo();
+                    end 
+                                        
+                

@@ -38,6 +38,7 @@ Label8:
 Label9:
 	ior
 	invokestatic io/putBool(Z)V
+	nop
 Label1:
 	return
 .limit stack 15
@@ -49,6 +50,7 @@ Label1:
 Label0:
 	aload_0
 	invokespecial java/lang/Object/<init>()V
+	nop
 Label1:
 	return
 .limit stack 1

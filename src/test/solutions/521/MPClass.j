@@ -15,6 +15,7 @@ Label2:
 	ldc "false"
 	invokestatic io/putString(Ljava/lang/String;)V
 Label3:
+	nop
 Label1:
 	return
 .limit stack 2
@@ -26,6 +27,7 @@ Label1:
 Label0:
 	aload_0
 	invokespecial java/lang/Object/<init>()V
+	nop
 Label1:
 	return
 .limit stack 1

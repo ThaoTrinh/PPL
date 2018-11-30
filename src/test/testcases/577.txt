@@ -1,0 +1,17 @@
+ 
+            var a: integer;
+                b: real;    
+            procedure main();
+            var d: boolean;
+            begin
+                with e: real; do
+                begin
+                    with e: integer; do 
+                    begin
+                        e:= 1;
+                        putInt(e);
+                    end
+                end
+            end
+            var c: real;
+            

@@ -1,0 +1,10 @@
+ 
+            var a: integer;
+                b: real;    
+            procedure main();
+            var a: real;
+            begin
+                putBool((2 * 3 <=  5) and then (1 < 6 mod 7) );
+            end
+            var c: real;
+            

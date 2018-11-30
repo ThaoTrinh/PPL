@@ -1,0 +1,8 @@
+procedure main();
+                begin
+                    foo(1,-1);
+                end
+                procedure foo(x:integer; y:real);
+                begin
+                    putFloat(x + y);
+                end

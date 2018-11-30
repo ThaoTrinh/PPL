@@ -1,0 +1,14 @@
+ 
+            var a: integer;
+                b: real;    
+            procedure main();
+            var d: boolean;
+            begin
+                with e: real; do
+                begin 
+                    e := 1.2;
+                    putFloat(e);
+                end
+            end
+            var c: real;
+            

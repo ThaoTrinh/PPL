@@ -1,0 +1,11 @@
+ 
+            var a: integer;
+                b: real;    
+            procedure main();
+            var d: boolean;
+            begin
+                d := true;
+                if d then putFloat(-5/(2 * 5) + 3);
+            end
+            var c: real;
+            

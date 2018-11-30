@@ -6,6 +6,7 @@
 Label0:
 	bipush 100
 	invokestatic io/putInt(I)V
+	nop
 Label1:
 	return
 .limit stack 1
@@ -18,6 +19,7 @@ Label0:
 	invokestatic MPClass/foo()V
 	ldc 5.5
 	invokestatic io/putFloat(F)V
+	nop
 Label1:
 	return
 .limit stack 1
@@ -29,6 +31,7 @@ Label1:
 Label0:
 	aload_0
 	invokespecial java/lang/Object/<init>()V
+	nop
 Label1:
 	return
 .limit stack 1

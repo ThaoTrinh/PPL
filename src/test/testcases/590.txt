@@ -1,0 +1,10 @@
+procedure main();
+                var a, b: integer;
+                begin
+                    for a := 5 dowNto -1 do
+                    begin
+                        putInt(a);
+                        if a < 1 then putInt(a);
+                    end
+                end
+                

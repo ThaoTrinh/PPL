@@ -7,7 +7,6 @@
             while (a - b <> 0) do
                 b := b + 1;
 
-            putFloat(b);
             if b = 100.0 then
             begin
                 putString("ok");

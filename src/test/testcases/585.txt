@@ -1,0 +1,10 @@
+function foo(a,b:real;d:boolean):real;
+                Begin
+                    return 6;
+                end
+                procedure main();
+                var a : real;
+                Begin
+                    a := foo(1,2,true);
+                    putFloat(a);
+                end

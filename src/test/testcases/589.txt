@@ -1,0 +1,11 @@
+procedure main();
+                var a,b:integer;
+                Begin
+                    with a:integer; b:real; do
+                    begin
+                        a := 6;
+                        b := 10;
+                        if b > a then return;
+                    end
+                    putInt(100);
+                end

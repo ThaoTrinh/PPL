@@ -15,6 +15,7 @@ Label0:
 	putstatic MPClass/a F
 	getstatic MPClass/a F
 	invokestatic io/putFloat(F)V
+	nop
 Label1:
 	return
 .limit stack 3
@@ -26,6 +27,7 @@ Label1:
 Label0:
 	aload_0
 	invokespecial java/lang/Object/<init>()V
+	nop
 Label1:
 	return
 .limit stack 1

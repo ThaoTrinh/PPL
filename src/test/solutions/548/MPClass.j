@@ -19,7 +19,8 @@ Label2:
 	fsub
 	iconst_0
 	i2f
-	if_icmpeq Label4
+	fcmpl
+	ifeq Label4
 	iconst_1
 	goto Label5
 Label4:
@@ -34,10 +35,9 @@ Label5:
 	goto Label2
 Label3:
 	fload_2
-	invokestatic io/putFloat(F)V
-	fload_2
 	ldc 100.0
-	if_icmpne Label6
+	fcmpl
+	ifne Label6
 	iconst_1
 	goto Label7
 Label6:
@@ -50,6 +50,7 @@ Label7:
 	goto Label9
 Label8:
 Label9:
+	nop
 Label1:
 	return
 .limit stack 9
@@ -61,6 +62,7 @@ Label1:
 Label0:
 	aload_0
 	invokespecial java/lang/Object/<init>()V
+	nop
 Label1:
 	return
 .limit stack 1

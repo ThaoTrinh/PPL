@@ -24,41 +24,44 @@ Label3:
 	ifeq Label4
 	iconst_1
 	istore_0
-Label6:
+Label8:
 	iload_0
 	bipush 7
-	if_icmpgt Label8
+	if_icmpgt Label9
 	iconst_1
-	goto Label9
-Label8:
-	iconst_0
+	goto Label10
 Label9:
+	iconst_0
+Label10:
 	ifeq Label7
+	iload_0
+	iconst_5
+	if_icmpne Label11
+	iconst_1
+	goto Label12
+Label11:
+	iconst_0
+Label12:
+	ifeq Label13
+	goto Label7
+	goto Label14
+Label13:
+	goto Label6
+Label14:
+	goto Label6
+Label6:
 	iload_0
 	iconst_1
 	iadd
 	istore_0
-	iload_0
-	iconst_5
-	if_icmpne Label10
-	iconst_1
-	goto Label11
-Label10:
-	iconst_0
-Label11:
-	ifeq Label12
-	goto Label7
-	goto Label13
-Label12:
-	goto Label6
-Label13:
-	goto Label6
+	goto Label8
 Label7:
 	goto Label5
 Label4:
 Label5:
 	iload_0
 	invokestatic io/putInt(I)V
+	nop
 Label1:
 	return
 .limit stack 12
@@ -71,6 +74,7 @@ Label0:
 	iconst_2
 	iconst_2
 	invokestatic MPClass/foo(II)V
+	nop
 Label1:
 	return
 .limit stack 4
@@ -81,6 +85,7 @@ Label1:
 Label0:
 	iconst_1
 	ireturn
+	nop
 Label1:
 .limit stack 2
 .limit locals 0
@@ -91,6 +96,7 @@ Label1:
 Label0:
 	aload_0
 	invokespecial java/lang/Object/<init>()V
+	nop
 Label1:
 	return
 .limit stack 1

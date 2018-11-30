@@ -13,6 +13,7 @@
 .var 2 is y F from Label0 to Label1
 Label0:
 	invokestatic MPClass/foo()V
+	nop
 Label1:
 	return
 .limit stack 0
@@ -23,6 +24,7 @@ Label1:
 .var 0 is x F from Label0 to Label1
 .var 1 is y F from Label0 to Label1
 Label0:
+	nop
 Label1:
 	return
 .limit stack 0
@@ -34,6 +36,7 @@ Label1:
 Label0:
 	aload_0
 	invokespecial java/lang/Object/<init>()V
+	nop
 Label1:
 	return
 .limit stack 1

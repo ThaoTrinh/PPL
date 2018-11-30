@@ -4,7 +4,6 @@
                     begin
                         for c:=a to b do
                             begin
-                                c:=c+1;
                                 putInt(c);
                             end
                     end

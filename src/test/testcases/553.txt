@@ -3,7 +3,6 @@
                     begin
                         for a:=3 to 7 do
                             begin
-                                a := a + 1;
                             end
                         putInt(a);
                     end

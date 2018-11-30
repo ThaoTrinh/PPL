@@ -7,6 +7,7 @@
 Label0:
 	ldc "Hello World"
 	invokestatic io/putString(Ljava/lang/String;)V
+	nop
 Label1:
 	return
 .limit stack 1
@@ -18,6 +19,7 @@ Label1:
 Label0:
 	aload_0
 	invokespecial java/lang/Object/<init>()V
+	nop
 Label1:
 	return
 .limit stack 1

@@ -1,0 +1,9 @@
+procedure main();
+                var x : integer;
+                begin
+                    putFloat(foo(1,-1,10,70+10));
+                end
+                function foo(x:integer; y:real; z:integer; t:real): real;
+                begin
+                    return x + y + z + t;
+                end

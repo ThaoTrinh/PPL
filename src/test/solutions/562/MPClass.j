@@ -41,6 +41,7 @@ Label8:
 	iconst_0
 	invokestatic io/putInt(I)V
 Label9:
+	nop
 Label1:
 	return
 .limit stack 9
@@ -53,6 +54,7 @@ Label0:
 	iconst_5
 	iconst_2
 	invokestatic MPClass/foo(II)V
+	nop
 Label1:
 	return
 .limit stack 4
@@ -64,6 +66,7 @@ Label1:
 Label0:
 	aload_0
 	invokespecial java/lang/Object/<init>()V
+	nop
 Label1:
 	return
 .limit stack 1

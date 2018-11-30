@@ -1,0 +1,15 @@
+ 
+            var a: integer;
+                b: real; 
+
+            procedure foo();
+            begin
+                putInt(1);
+            end   
+            procedure main();
+            var d: boolean;
+            begin
+                foo();
+            end
+            var c: real;
+            

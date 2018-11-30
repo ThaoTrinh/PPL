@@ -424,18 +424,39 @@ class Emitter():
 
         frame.pop()
         frame.pop()
-        if op == ">":
-            result.append(self.jvm.emitIFICMPLE(labelF))
-        elif op == ">=":
-            result.append(self.jvm.emitIFICMPLT(labelF))
-        elif op == "<":
-            result.append(self.jvm.emitIFICMPGE(labelF))
-        elif op == "<=":
-            result.append(self.jvm.emitIFICMPGT(labelF))
-        elif op == "<>":
-            result.append(self.jvm.emitIFICMPEQ(labelF))
-        elif op == "=":
-            result.append(self.jvm.emitIFICMPNE(labelF))
+
+        if type(in_) is FloatType:
+            frame.push()
+            result.append(self.jvm.emitFCMPL())
+
+            frame.pop()
+            if op == ">":
+                result.append(self.jvm.emitIFLE(labelF))
+            elif op == ">=":
+                result.append(self.jvm.emitIFLT(labelF))
+            elif op == "<":
+                result.append(self.jvm.emitIFGE(labelF))
+            elif op == "<=":
+                result.append(self.jvm.emitIFGT(labelF))
+            elif op == "<>":
+                result.append(self.jvm.emitIFEQ(labelF))
+            elif op == "=":
+                result.append(self.jvm.emitIFNE(labelF))
+
+        else:
+            if op == ">":
+                result.append(self.jvm.emitIFICMPLE(labelF))
+            elif op == ">=":
+                result.append(self.jvm.emitIFICMPLT(labelF))
+            elif op == "<":
+                result.append(self.jvm.emitIFICMPGE(labelF))
+            elif op == "<=":
+                result.append(self.jvm.emitIFICMPGT(labelF))
+            elif op == "<>":
+                result.append(self.jvm.emitIFICMPEQ(labelF))
+            elif op == "=":
+                result.append(self.jvm.emitIFICMPNE(labelF))
+
         result.append(self.emitPUSHCONST("1", IntType(), frame))
         frame.pop()
         result.append(self.emitGOTO(labelO, frame))

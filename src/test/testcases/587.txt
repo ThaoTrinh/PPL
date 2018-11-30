@@ -1,0 +1,13 @@
+procedure main();
+                var a,b:integer;
+                Begin
+                    a := 100;
+                    b:= 60;
+                    with a:integer; b:real; do
+                    begin
+                        a := 6;
+                        b := 10;
+                        putFloat(a+b);
+                    end
+                    putInt(a);
+                end

@@ -1,0 +1,10 @@
+ 
+            var a: integer;
+                b: real;    
+            procedure main();
+            var a: real;
+            begin
+                putBool(2 < 5 and then 1 < 6 and then 3>=4 );
+            end
+            var c: real;
+            
