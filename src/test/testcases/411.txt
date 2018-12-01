@@ -1,0 +1,9 @@
+
+        procedure main();
+        begin
+        putBool(true);
+        end;
+        procedure foo(x:integer);
+        begin
+        end
+        

@@ -1,1 +1,6 @@
-Program([FuncDecl(Id(main),[],VoidType(),[],[CallStmt(Id(foo),[])])])
+
+        procedure main();
+        begin
+        putFloat(10.0);
+        end;
+        

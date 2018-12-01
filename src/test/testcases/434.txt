@@ -1,0 +1,12 @@
+
+           procedure foo(a:integer; b:integer);
+           begin
+           putInt(a+b);
+           end
+           procedure main();
+           begin
+           foo(2,3);
+           end
+           
+
+           

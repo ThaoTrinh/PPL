@@ -1,0 +1,15 @@
+
+           procedure main();
+           var a: integer;
+           begin
+           a:=3;
+           putInt(a);
+           with a,b:real do
+           begin
+           a:=2.0;
+           putFloat(a);
+           end
+           putInt(a);
+           end
+    
+           

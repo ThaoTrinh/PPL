@@ -1,0 +1,11 @@
+
+        procedure main();
+        var b: boolean;
+        a:real;
+        begin
+        a:=3.0;
+        b:= (a>2);
+        putBool(b);
+        end
+    
+        

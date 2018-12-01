@@ -1,1 +1,1 @@
-Undeclared Procedure: foo
+100

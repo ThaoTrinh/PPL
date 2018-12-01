@@ -625,6 +625,8 @@ class Emitter():
             return self.jvm.emitIRETURN()
         elif type(in_) is VoidType:
             return self.jvm.emitRETURN()
+        elif type(in_) is StringType:
+            return self.jvm.emitARETURN()
 
     ''' generate code that represents a label	
     *   @param label the label

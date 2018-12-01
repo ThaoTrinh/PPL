@@ -1,0 +1,13 @@
+
+        var y: integer;
+        procedure main();
+        var x: real;
+        begin
+        x:= 1;
+        putFloat(x);
+        end;
+        procedure foo(x:integer;y:integer);
+        begin
+        putInt(1);
+        end
+        

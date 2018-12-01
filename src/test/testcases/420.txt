@@ -1,0 +1,9 @@
+
+        procedure main();
+        var b: boolean;
+        begin
+        b:= not(3>2);
+        putBool(b);
+        end
+    
+        

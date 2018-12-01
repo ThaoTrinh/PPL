@@ -1,0 +1,13 @@
+
+           procedure main();
+           var a: real;
+           begin
+           a:=3.0;
+           with a,b:integer do
+           begin
+           a:=5;
+           putInt(a);
+           end
+           end
+    
+           

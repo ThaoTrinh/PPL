@@ -1,0 +1,11 @@
+
+           procedure foo();
+           begin
+           putInt(3);
+           end
+           procedure main();
+           begin
+           foo();
+           end
+    
+           

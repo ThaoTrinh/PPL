@@ -1,0 +1,10 @@
+
+           procedure main();
+           var a: integer;
+           begin
+           for a:=1 to 10 do
+           a:=a+1;
+           putInt(a);
+           end
+    
+           

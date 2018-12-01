@@ -239,27 +239,16 @@ class CodeGenVisitor(BaseVisitor, Utils):
             str1, typ1 = self.visit(arg, Access(frame, nenv, False, True))
 
             if isinstance(typ1, MType):
-                
                 if not isinstance(typ1.rettype, type(params[i])):
-                    in_ = (in_[0] + self.emit.emitI2F(frame), in_[1])
-                continue
-            if not isinstance(typ1, type(params[i])):
-                
+                    str1 = str1 + self.emit.emitI2F(frame)
+            elif not isinstance(typ1, type(params[i])):
                 str1 = str1 + self.emit.emitI2F(frame)
             in_ = (in_[0] + str1, in_[1] + [typ1])
-            
-        # self.emit.printout(in_[0])
-        # self.emit.printout(self.emit.emitINVOKESTATIC(
-        #     cname + "/" + ast.method.name,
-        #     ctype,
-        #     frame))
-
-        # return str1, ctype.rettype
 
         return in_[0] + (self.emit.emitINVOKESTATIC(
             cname + "/" + sym.name,
             ctype,
-            frame)), ctype.rettype # xem lai
+            frame)), ctype
 
     def visitCallStmt(self, ast, o):
         #ast: CallStmt
@@ -283,12 +272,9 @@ class CodeGenVisitor(BaseVisitor, Utils):
             str1, typ1 = self.visit(arg, Access(frame, nenv, False, True))
            
             if isinstance(typ1, MType):
-                
                 if not isinstance(typ1.rettype, type(params[i])):
-                    in_ = (in_[0] + self.emit.emitI2F(frame), in_[1])
-                continue
-            if not isinstance(typ1, type(params[i])):
-
+                    str1 = str1 + self.emit.emitI2F(frame)
+            elif not isinstance(typ1, type(params[i])):
                 str1 = str1 + self.emit.emitI2F(frame)
             in_ = (in_[0] + str1, in_[1] + [typ1])
         self.emit.printout(in_[0])
@@ -347,12 +333,13 @@ class CodeGenVisitor(BaseVisitor, Utils):
         
         if isinstance(type_exp, MType):
             type_exp = type_exp.rettype
-            exp = ""
 
         if not isinstance(type_exp, type(type_lhs)):
             exp = exp + self.emit.emitI2F(frame)
 
         self.emit.printout(exp+lhs)
+
+        
     def visitId(self, ast, o):
         subctxt = o
         frame = subctxt.frame
@@ -393,6 +380,12 @@ class CodeGenVisitor(BaseVisitor, Utils):
         right, type_right = self.visit(ast.right, Access(frame, sym, False, True))
         #input(ast.right)
         op = ast.op.lower()
+
+        if isinstance(type_left, MType):
+            type_left = type_left.rettype
+        if isinstance(type_right, MType):
+            type_right = type_right.rettype
+
         if not isinstance(type_left, type(type_right)):
             if isinstance(type_left, FloatType):
                 right = right + self.emit.emitI2F(frame)

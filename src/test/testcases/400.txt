@@ -1,1 +1,3 @@
-procedure main(); begin foo();end
+
+        procedure main(); begin putInt(100); end
+        

@@ -1,0 +1,14 @@
+
+        procedure main();
+        var a,b,c: real;
+        begin
+        a:=1.0;
+        b:=2.0;
+        if (a>b) then
+            c:=1.0;
+        else
+            c:= 2.0;
+        putFloat(c);
+        end
+    
+        
