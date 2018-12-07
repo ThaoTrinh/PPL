@@ -1,0 +1,7 @@
+procedure main();
+        var a: boolean;
+            b,c: real;
+            d: integer;
+        begin
+            b := c + d + a;
+        end

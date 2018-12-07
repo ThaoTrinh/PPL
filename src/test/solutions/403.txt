@@ -1,1 +1,1 @@
-Type Mismatch In Statement: CallStmt(Id(putIntLn),[])
+Redeclared Parameter: a

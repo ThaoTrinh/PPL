@@ -1,0 +1,6 @@
+
+            procedure main();
+            begin
+                for i:=1 to N do
+                    for i:=4 downto 1 do a := a - N ;
+            end

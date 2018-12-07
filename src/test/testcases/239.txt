@@ -1,0 +1,5 @@
+
+                procedure foo(a: integer);
+                begin
+                    a + 1 := a[b[2]] +3;
+                end

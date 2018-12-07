@@ -1,9 +1,17 @@
 
-        procedure main();
-        var b: boolean;
-        begin
-        b:= not(3>2);
-        putBool(b);
-        end
-    
+        function foo(c, d: integer): integer;
+        var a, e: integer;
         
+        begin 
+            break;
+            for a := 3 to 7 do begin 
+                for e := d to d do begin end
+            end
+            
+        end
+
+
+        procedure main();
+            begin end
+        var b: integer;
+            

@@ -1,0 +1,5 @@
+
+            procedure main();
+            begin
+                with a,b,c:array[0 .. 1] of boolean; d: string; e: integer ; do
+            end

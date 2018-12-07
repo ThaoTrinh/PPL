@@ -1,0 +1,18 @@
+
+
+        procedure main();
+            var i: integer;
+            begin 
+                for i := 3 to 7
+                    do return;
+                while i > 7 do return;
+            end
+
+        function a(): integer;
+            var i: integer;
+            begin 
+                for i := 3 to 7
+                    do return 7;
+                while i > 7 do return 5;
+            end
+            

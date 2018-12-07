@@ -1,0 +1,11 @@
+
+            procedure main();
+            begin
+                while a=false do
+                    begin
+                        while a = 4 do while b >=8 do while c = true do foo()[4]:= a[a[a[a[a[true]]]]];
+                    end
+                    break ;
+                    continue;
+                    return;
+            end

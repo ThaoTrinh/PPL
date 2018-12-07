@@ -1,0 +1,11 @@
+
+                function foo (a , b : integer ; c : real ) : array [ 1 .. 2 ] of integer ;
+                    begin
+                        begin
+                            begin
+                                begin
+                                end 
+                            end
+                        end
+                    end
+                

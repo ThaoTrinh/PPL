@@ -1,0 +1,15 @@
+
+        procedure main();
+        var x: array [1 .. 3] of real;
+            y: array [1 .. 3] of integer;
+            z: array [1 .. 3] of boolean;
+        begin
+            foo(x); // ok
+            foo(y); // type coercion
+            foo(z); // fail
+        end
+
+        procedure foo(x: array [1 .. 3] of real);
+        begin
+        end
+        

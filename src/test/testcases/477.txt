@@ -1,0 +1,5 @@
+procedure main();
+        var a,b,c:real;
+        begin
+            a := b + c[1];
+        end

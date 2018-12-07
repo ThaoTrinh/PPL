@@ -1,0 +1,20 @@
+
+        var a, b: integer; c: real;
+        var f: array [1 .. 5] of integer;
+        function foo(x: integer; c: real): real;
+            var a, b: integer; n: real;
+            begin
+                with s:boolean; do 
+                    return 5;
+            end
+        procedure main(); 
+            begin
+                for a:=1 to 5 do
+                    for b:=8 downto 2 do
+                        a:=2;
+                        for b:=1 to 9 do
+                            begin
+                            end
+                foo(a, b);
+            end
+        

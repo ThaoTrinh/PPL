@@ -1,0 +1,7 @@
+procedure foo ();
+                    var x , y : real ;
+                        a: array [1 .. 2] of integer;
+                        c: boolean;
+                        d: integer;
+                    begin
+                    end

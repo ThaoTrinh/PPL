@@ -1,0 +1,8 @@
+
+        function foo ( ) : real ;
+            begin
+                if ( a <> 6 ) then return 2.3 ; //CORRECT
+                else return 2; //CORRECT
+            end
+            end
+        

@@ -1,7 +1,13 @@
 
-        var x,y: integer;
-        procedure main();
-        begin
-        putBool(true);
-        end;
         
+        procedure main();
+            var a: integer;
+            begin 
+                return;
+            end
+        var b: integer;
+        function foo(c, C: integer): integer;
+        begin
+            return 5;
+        end
+            

@@ -1,0 +1,8 @@
+procedure foo(a: integer; b:real);
+        begin
+        end
+        procedure main();
+        var x,y: real;
+        begin
+            foo(x,y);
+        end

@@ -1,0 +1,8 @@
+
+            procedure main();
+            begin
+                with a,b,c:array[0 .. 1] of boolean; d: string; e: integer ; do
+                    begin
+                        return foo(a,b,4,5,6)[a(1)[4]];
+                    end
+            end

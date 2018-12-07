@@ -1,0 +1,1 @@
+Type Mismatch In Statement: While(Id(a),[AssignStmt(Id(a),BinaryOp(+,Id(a),IntLiteral(1)))])

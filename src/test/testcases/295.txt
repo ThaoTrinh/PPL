@@ -1,0 +1,14 @@
+procedure foo(a : array [ 12 .. 103 ] of real);
+        var x,y : array[1 .. -9] of real; 
+            b : integer;
+        begin
+            if a + b then 
+               for i := 1 to n do break; else
+                for y := 1 to s do 
+                   with a: integer; do while x div y do 
+                        a:=b:=g[fo(9, x + 2, y mod r)];     
+
+             with a,b: integer; x : boolean; do
+                with c: real; do 
+                        if x or e then fo(9); else with a,b: real; do fo(9);
+        end

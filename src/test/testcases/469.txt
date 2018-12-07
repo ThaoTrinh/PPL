@@ -1,0 +1,9 @@
+
+        procedure main();
+        var sum: integer;
+        begin
+            // wrong coerce float->int
+            sum := 1.0;
+            return;
+        end
+        

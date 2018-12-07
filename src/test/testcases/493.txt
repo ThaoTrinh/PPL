@@ -1,0 +1,14 @@
+procedure main();
+        var a: array [2 .. 3] of integer;
+            b,c: array [2 .. 3] of real;
+
+        begin
+        end
+
+        function e(): integer;
+        begin
+            with a , b : integer ; c : array [ 1 .. 2 ] of real ; do
+                return c [ a ] + b ;
+
+        end
+        

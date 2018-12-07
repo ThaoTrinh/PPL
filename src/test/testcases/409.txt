@@ -1,6 +1,11 @@
 
-        procedure main();
-        begin
-        putBool(true);
-        end;
         
+        procedure main();
+            var a: integer;
+            begin 
+                
+            end
+        var b: integer;
+        function B(): integer;
+        begin end
+            

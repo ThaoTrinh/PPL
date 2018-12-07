@@ -1,0 +1,7 @@
+procedure main();
+        var a: integer;
+            b: real;
+        begin
+            for a := 1 to b do
+                a := a + 1; 
+        end

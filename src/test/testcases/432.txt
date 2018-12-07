@@ -1,15 +1,14 @@
 
-           procedure main();
-           var a: integer;
-           begin
-           a:=3;
-           putInt(a);
-           with a,b:real do
-           begin
-           a:=2.0;
-           putFloat(a);
-           end
-           putInt(a);
-           end
-    
-           
+        function foo(c, d: real): integer;
+        var a: integer;
+            b: array [1 .. 3] of integer;
+        begin 
+            
+           a := b [ a[c] ] ;
+        end
+
+
+        procedure main();
+            begin end
+        var b: integer;
+            

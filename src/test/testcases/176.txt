@@ -1,0 +1,1 @@
+procedure pro(a:real);

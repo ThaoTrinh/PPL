@@ -283,15 +283,15 @@ class TestCodeGen():
             inputfile = TestUtil.makeSource(str(input), num)
             asttree = input
 
-        checker = StaticChecker(asttree)
-        try:
-            checker.check()
-        except StaticError as e:
-            if VERBOSE_MODE:
-                print('[*] {} [{}]\n-->[{}]'.format(
-                    num, inputfile, str(asttree)))
-                print('*' * 10, '{}'.format(num), str(e))
-                raise e
+        # checker = StaticChecker(asttree)
+        # try:
+        #     checker.check()
+        # except StaticError as e:
+        #     if VERBOSE_MODE:
+        #         print('[*] {} [{}]\n-->[{}]'.format(
+        #             num, inputfile, str(asttree)))
+        #         print('*' * 10, '{}'.format(num), str(e))
+        #         raise e
 
         TestCodeGen.check(SOL_DIR, asttree, num)
 

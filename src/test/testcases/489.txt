@@ -1,0 +1,14 @@
+procedure main();
+        var a: boolean;
+            b,c: integer;
+        begin
+        end
+        Var putBool: integer;
+        FunCtion thao(): real;
+            var b: real;
+             a: integer;
+            begin
+                a := b;
+                return 6;
+            end
+        

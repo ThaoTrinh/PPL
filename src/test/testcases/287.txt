@@ -1,0 +1,7 @@
+function foo(a : array [ 12 .. 103 ] of real) : array [2 .. 7] of boolean;
+        begin
+            if a + b then 
+               for i := 1 to n do break; else
+                for y := 1 to s do 
+                    if a + v - h then fo(a[0]);        
+        end

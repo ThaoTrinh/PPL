@@ -1,12 +1,16 @@
 
-           procedure foo(a:integer; b:integer);
-           begin
-           putInt(a+b);
-           end
-           procedure main();
-           begin
-           foo(2,3);
-           end
-           
+        function foo(a: integer; b: integer): integer;
 
-           
+        begin 
+            
+            return 5;
+        end
+
+
+        procedure main();
+            var k: array [2 .. 3] of real;
+            begin 
+                b := foo(3, k);
+            end
+        var b: integer;
+            

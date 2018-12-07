@@ -1,0 +1,1 @@
+int a = foo(2)[3+x]+array[3]*b[a[2][3]]+foo1(b,c,d);

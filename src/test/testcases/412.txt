@@ -1,12 +1,15 @@
 
-        procedure main();
-        var x: integer;
-        begin
-        x:= 1+3;
-        putInt(x);
-        end;
-        procedure foo(x:integer;y:integer);
-        begin
-        putInt(1);
+        function foo(c, d: integer): integer;
+        var a: integer;
+        begin 
+            a := t();
+            return 7;
         end
-        
+
+        procedure main();
+            var a: integer;
+            begin 
+                return ;
+            end
+        var b: integer;
+            

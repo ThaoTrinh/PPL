@@ -1,0 +1,7 @@
+
+                VAR i : real;
+                function main(): integer;
+                begin end
+                procedure main();
+                begin end
+                

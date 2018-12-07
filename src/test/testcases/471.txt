@@ -1,0 +1,6 @@
+procedure main();
+        var a: real;
+            b: integer;
+        begin
+            if a + b then return;
+        end

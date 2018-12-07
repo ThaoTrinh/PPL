@@ -1,14 +1,16 @@
 
-        procedure main();
-        var a,b,c: real;
-        begin
-        a:=1.0;
-        b:=2.0;
-        if (a>b) then
-            c:=1.0;
-        else
-            c:= 2.0;
-        putFloat(c);
-        end
-    
+        function foo(c, d: real): integer;
+        var a, e: integer;
         
+        begin 
+            for a := 3 to c do begin 
+                for e := a to d do begin end
+            end
+            
+        end
+
+
+        procedure main();
+            begin end
+        var b: integer;
+            

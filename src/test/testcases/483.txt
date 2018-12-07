@@ -1,0 +1,15 @@
+procedure main();
+        var a: boolean;
+            b,c: integer;
+        begin
+
+        end
+        
+        FunCtion a(): integer;
+            var b: real;
+             a: integer;
+            begin
+                if a< 4 then
+                return b;
+            end
+        

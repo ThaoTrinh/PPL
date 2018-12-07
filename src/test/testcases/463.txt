@@ -1,0 +1,10 @@
+
+        procedure main();
+        begin
+            foo();
+        end
+
+        procedure foo(x: integer);
+        begin
+        end
+        

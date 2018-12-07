@@ -1,0 +1,13 @@
+procedure main();
+        var a: array [2 .. 3] of integer;
+            b,c: array [2 .. 3] of real;
+
+        begin
+            a:= putK(b);
+        end
+        FunCtion putK(a: array [2 .. 3] of real): array [2 .. 3] of real;
+            var b: Array [2 .. 3] of real;
+            begin
+                return b;
+            end
+        

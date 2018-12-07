@@ -1,0 +1,5 @@
+
+                procedure foo(a: integer);
+                begin
+                    a:= a[b[]] +3;
+                end

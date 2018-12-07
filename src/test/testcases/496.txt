@@ -1,0 +1,12 @@
+procedure main();
+
+        begin
+            return 7;
+        end
+
+        function e(): integer;
+        var a: integer;
+        begin
+            return 5;
+        end
+        

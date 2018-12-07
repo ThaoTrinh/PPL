@@ -1,10 +1,15 @@
 
-           procedure main();
-           var a: integer;
-           begin
-           for a:=10 downto 0 do
-           a:=a-1;
-           putInt(a);
-           end
-    
-           
+        function foo(c, d: integer): integer;
+        var a: integer;
+        
+        begin 
+            
+           a := c := b := e;
+            return 5;
+        end
+
+
+        procedure main();
+            begin return ; end
+        var b: integer;
+            

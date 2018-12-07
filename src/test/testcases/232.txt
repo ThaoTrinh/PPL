@@ -1,0 +1,5 @@
+
+            procedure main();
+                begin
+                    a := 6-3;
+                end

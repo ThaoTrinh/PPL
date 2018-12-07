@@ -1,0 +1,12 @@
+
+            function main() : array [1 .. 2] of real;
+            begin
+                { This is a block comment }
+                begin
+                    return foo(a,b,456)[a[a[a[1]]]];
+                end
+            end
+            procedure main1();
+            begin
+            end
+            

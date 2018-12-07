@@ -1,0 +1,5 @@
+
+                VAR a,b,c : real;
+                    thao: boolean;
+                    i: array [1 .. 2] of integer;
+                

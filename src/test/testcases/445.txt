@@ -1,0 +1,5 @@
+
+        var main: integer;
+        procedure main();
+            begin end
+            var main: integer;

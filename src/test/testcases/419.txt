@@ -1,9 +1,16 @@
 
-        procedure main();
-        var a: integer;
-        begin
-        a:= 5 mod 3;
-        putInt(a);
-        end
-    
+        function foo(c, d: real): integer;
+        var a, e: integer;
         
+        begin 
+            for a := 3 to 7 do begin 
+                for e := d to d do begin end
+            end
+            
+        end
+
+
+        procedure main();
+            begin end
+        var b: integer;
+            

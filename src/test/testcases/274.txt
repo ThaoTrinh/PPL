@@ -1,0 +1,8 @@
+
+                var i : integer ;
+                function f ( ) : integer ;
+                begin
+                    a:= 1.e12 + 34.;
+                    return 200;
+                end
+            

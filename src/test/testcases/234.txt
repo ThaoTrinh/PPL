@@ -1,0 +1,5 @@
+
+            procedure main();
+                begin
+                    a := a()[(cbef)]:=a[1[a]] :=1[1] :=(a)[a]:= a()[b] ;
+                end

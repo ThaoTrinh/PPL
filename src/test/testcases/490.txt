@@ -1,0 +1,12 @@
+procedure main();
+        var a: boolean;
+            b,c: integer;
+        begin
+        end
+        FunCtion putK(): array [2 .. 3] of real;
+            var b: Array [2 .. 3] of integer;
+             a: integer;
+            begin
+                return b;
+            end
+        

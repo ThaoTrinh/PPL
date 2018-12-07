@@ -1,0 +1,1 @@
+Type Mismatch In Statement: AssignStmt(Id(a),CallExpr(Id(putK),[Id(b)]))

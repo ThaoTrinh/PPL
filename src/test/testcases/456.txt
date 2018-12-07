@@ -1,0 +1,10 @@
+
+        procedure main();
+        var sum: boolean;
+        begin
+            // wrong coerce int->bool
+            // common mistake if come from other languages
+            sum := 1;
+            return;
+        end
+        

@@ -1,0 +1,9 @@
+
+            procedure main();
+            begin
+                while a do b();
+                while a do
+                    begin
+                        c();
+                    end
+            end

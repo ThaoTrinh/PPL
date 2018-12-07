@@ -1,0 +1,9 @@
+
+        procedure main();
+        var sum: real;
+        begin
+            sum := 1; // this should pass
+            sum := true; // this should fail
+            return;
+        end
+        

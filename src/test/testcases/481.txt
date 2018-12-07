@@ -1,0 +1,7 @@
+function main(): integer;
+        var a: boolean;
+            b,c: integer;
+        begin
+            b := c div -a;
+            return 5;
+        end

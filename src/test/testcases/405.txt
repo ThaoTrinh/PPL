@@ -1,6 +1,12 @@
 
         procedure main();
-        begin
-        putFloat(1.0-3);
-        end;
-        
+        begin 
+            return ;
+        end
+        procedure getInt(a, b, c: integer);
+            var a: integer;
+            begin 
+                
+            end
+        var d: integer;
+            

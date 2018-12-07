@@ -1,0 +1,5 @@
+
+                procedure main();
+                    begin
+                        while (a>=6) b := c + d;
+                    end

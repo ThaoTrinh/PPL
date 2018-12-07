@@ -1,6 +1,13 @@
 
+        
         procedure main();
         begin
-        putFloat(1.0*3);
-        end;
-        
+            return ;
+        end
+        procedure foo(a: integer);
+            var A: integer;
+            begin 
+                return;
+            end
+        var a: integer;
+            

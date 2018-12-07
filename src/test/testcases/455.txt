@@ -1,0 +1,9 @@
+
+        procedure main();
+        var sum, arr: array [1 .. 2] of integer;
+        begin
+            // lhs cannot be array
+            sum := arr;
+            return;
+        end
+        

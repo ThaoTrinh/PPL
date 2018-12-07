@@ -1,13 +1,14 @@
 
-           procedure main();
-           var a: integer;
-           begin
-           for a:=10 downto 0 do
-           begin
-           a:=a-1;
-           if (a=5) break;
-           end
-           putInt(a);
-           end
-    
-           
+        function foo(c, d: integer): integer;
+        var a: integer;
+            b: boolean;
+        begin 
+            
+           if not a then begin end
+        end
+
+
+        procedure main();
+            begin end
+        var b: integer;
+            

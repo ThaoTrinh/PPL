@@ -1,0 +1,9 @@
+procedure foo ();
+                    var x , y : real ;
+                    begin
+                        begin
+                            begin
+                                c := 5;
+                            end
+                        end
+                    end

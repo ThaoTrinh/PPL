@@ -1,0 +1,12 @@
+procedure main();
+        var a: boolean;
+            b,c: integer;
+        begin
+        end
+        FunCtion a(): real;
+            var b: real;
+             a: integer;
+            begin
+                return True;
+            end
+        

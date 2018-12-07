@@ -1,16 +1,18 @@
 
-        procedure main();
-        var a,b,c: integer;
-        begin
-        a:=0;
-        if (a<2) then
-            begin
-            b:=3;
-            a:=a+1;
-            end
-        else
-            b:=2;
-        putInt(a+b);
-        end
-    
+        function foo(c, d: integer): integer;
+        var a: integer;
         
+        begin 
+            
+            while a > 3 do begin 
+                break;
+            end
+            continue;
+            
+        end
+
+
+        procedure main();
+            begin end
+        var b: integer;
+            

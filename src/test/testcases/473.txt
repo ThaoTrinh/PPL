@@ -1,0 +1,6 @@
+procedure main();
+        var a: integer;
+        begin
+            while a do
+                a := a + 1;
+        end

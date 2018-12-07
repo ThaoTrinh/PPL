@@ -1,0 +1,9 @@
+
+        procedure main();
+        var sum: string;
+        begin
+            // lhs cannot be string
+            sum := "Hello World";
+            return;
+        end
+        

@@ -1,6 +1,7 @@
-
-        procedure main();
-        begin
-        putFloat(10.0);
-        end;
-        
+procedure main();
+            var a: integer;
+            begin 
+                
+            end
+            var b, b: integer;
+            

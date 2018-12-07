@@ -1,0 +1,13 @@
+
+        (*
+        procedure foo();
+            var
+                y : array [2 .. 3] of real ;
+                z : array [1 .. 2] of integer ;
+            begin
+                foo (x ) ; // Call function
+                foo (y ) ; // Call function
+                foo ( z ) ; // Call function
+            end
+        *)
+        

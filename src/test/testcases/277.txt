@@ -1,0 +1,8 @@
+
+        function foo ( ) : real ;
+            begin
+            end
+
+            begin
+            end
+        

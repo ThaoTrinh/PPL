@@ -1,9 +1,13 @@
 
+        function foo(c, C: integer): integer;
+        begin
+            return 5;
+         end
+
         procedure main();
-        begin
-        putBool(true);
-        end;
-        procedure foo(x:integer);
-        begin
-        end
-        
+            var a: integer;
+            begin 
+                return ;
+            end
+        var b: integer;
+            

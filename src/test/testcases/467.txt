@@ -1,0 +1,11 @@
+
+        procedure main();
+        var x: array [1 .. 3] of real;
+        begin
+            foo(x);
+        end
+
+        procedure foo(x: array [1 .. 3] of integer);
+        begin
+        end
+        

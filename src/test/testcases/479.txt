@@ -1,0 +1,5 @@
+procedure main();
+        var a,b,c:integer;
+        begin
+            a := b mod not c;
+        end

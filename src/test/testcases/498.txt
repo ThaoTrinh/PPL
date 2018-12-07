@@ -1,0 +1,21 @@
+
+        var x, y : array[1 .. 3] of boolean;
+            a, b: integer;
+            c, d: real;
+            e, f: boolean;
+            m, n : string;
+        
+        function foo() : integer ;
+        begin   
+            return a;    
+        end
+
+        procedure main(); 
+        begin
+            x[foo()] := f or b;
+        end
+
+        procedure foo2 (n: string; m : array[2 .. 3] of real);
+        begin          
+        end
+        

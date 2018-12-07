@@ -1,11 +1,16 @@
 
-        procedure main();
-        var a: integer;
-        begin
-        a:=0;
-        while (a<=3) do
-        a:=a+1;
-        putInt(a);
-        end
-    
+        function foo(c, d: integer): integer;
+        var a: real;
         
+        begin 
+            while e > 3 do begin end
+            return 5;
+        end
+
+
+        procedure main();
+            begin 
+                return;
+            end
+        var b: integer;
+            

@@ -1,0 +1,10 @@
+
+        procedure main();
+        begin
+        end
+
+        function foo(): integer;
+        begin
+            return 1.0;
+        end
+        

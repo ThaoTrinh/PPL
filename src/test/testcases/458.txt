@@ -1,0 +1,6 @@
+
+        procedure main();
+        begin
+            return 1;
+        end
+        

@@ -1,13 +1,14 @@
 
-        var y: integer;
-        procedure main();
-        var x: real;
-        begin
-        y:= 1;
-        putInt(y);
-        end;
-        procedure foo(x:integer;y:integer);
-        begin
-        putInt(1);
-        end
+        function foo(c, d: integer): integer;
+
         
+        begin 
+            for a:= c to 7 do begin end
+                return 3;
+        end
+
+
+        procedure main();
+            begin return; end
+        var b: integer;
+            

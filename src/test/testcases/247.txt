@@ -1,0 +1,8 @@
+
+                procedure main();
+                begin
+                    if (a>=b) then return a;
+                    if (a>=b) then return a;
+                    else return b;
+                end
+         

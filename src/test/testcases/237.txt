@@ -1,0 +1,5 @@
+
+            procedure main();
+                begin
+                    a := 4 OR 6 OR 10 OR ------ NOT NOT NOT 7;
+                end

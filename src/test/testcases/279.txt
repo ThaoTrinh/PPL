@@ -1,0 +1,9 @@
+
+            procedure main();
+            begin
+                a := "This is my test";
+                {PPL is very difficult but interesting}
+                a := c+d/5 and              then 1;
+                c := a+7-----7 or          else 2;
+            end
+        

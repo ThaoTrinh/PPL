@@ -1,11 +1,14 @@
 
-           procedure foo();
-           begin
-           putInt(3);
-           end
-           procedure main();
-           begin
-           foo();
-           end
-    
-           
+        function foo(c, d: integer): integer;
+        var a, e: boolean;
+        
+        begin 
+            while a > 3 do begin end
+            
+        end
+
+
+        procedure main();
+            begin end
+        var b: integer;
+            

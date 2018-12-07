@@ -1,0 +1,17 @@
+
+        function foo(a: integer; b: integer): array [2 .. 3] of integer;
+
+        var t: array [2 .. 3] of real;
+        begin 
+            
+            return t;
+        end
+
+
+        procedure main();
+            var k: array [2 .. 3] of real;
+            begin 
+            return;
+            end
+        var b: integer;
+            

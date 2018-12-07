@@ -1,0 +1,6 @@
+procedure main();
+        var a: boolean;
+            b,c: integer;
+        begin
+            b := c div -a;
+        end

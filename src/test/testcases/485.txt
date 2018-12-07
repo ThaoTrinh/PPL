@@ -1,0 +1,13 @@
+procedure main();
+        var a: boolean;
+            b,c: integer;
+        begin
+            break;
+        end
+        FunCtion a(): integer;
+            var b: real;
+             a: integer;
+            begin
+                return 6;
+            end
+        

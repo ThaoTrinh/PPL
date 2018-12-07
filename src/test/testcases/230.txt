@@ -1,0 +1,5 @@
+
+            procedure main();
+                begin
+                    a := c[c[c[c[c[c[b][x][y][z]]]]]];
+                end

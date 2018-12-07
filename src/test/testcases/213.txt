@@ -1,0 +1,5 @@
+
+                VAR a,b,c ;
+                    i: array [1 .. 2] of interger;
+                    d: array [] of boolean
+                

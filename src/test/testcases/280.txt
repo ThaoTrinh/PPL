@@ -1,0 +1,17 @@
+
+        procedure main();
+        begin
+            foo(2)[3+x] := a[b[2]] +3;
+            a[10+3] := abcd := fer := 5+6+9*10/8 ;
+            a := b [ 10 ] := foo( ) [ 3 ] := x := 1 ;
+            with a, b : integer ; c : array [1 .. 2] of real ; do
+                d := c[a] + b;
+                foo(3, a+1, m(2));
+                if 1+2=3 then a := 10;
+                else a := 9;
+                if 5+6=8 then b := 5;
+                while 5<6 do d:=6;
+                for x := 7*9+6 Downto 6-(-3) do abc := 5+6*12/8; 
+                    break;
+                    continue;
+        end

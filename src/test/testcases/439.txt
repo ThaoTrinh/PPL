@@ -1,0 +1,12 @@
+
+
+        procedure main();
+            var i: integer;
+            begin 
+                for i := 3 to 7
+                    do return;
+                while i > 7 do return;
+                if i > 3 then return;
+                else return 5;
+            end
+            

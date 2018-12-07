@@ -1,0 +1,3 @@
+procedure main();
+            begin end
+            var main: integer;

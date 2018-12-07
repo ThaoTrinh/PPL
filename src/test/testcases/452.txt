@@ -1,0 +1,19 @@
+
+        var x, y : array[1 .. 3] of integer;
+            a, b: integer;
+            c, d: real;
+            e, f: boolean;
+            m, n : string;
+        procedure main();
+        begin
+        end
+
+        function putInt() : array[1 .. 3] of integer;
+        begin   
+            return x;    
+        end
+
+        procedure foo2 (n: real; m : integer);
+        begin
+        end
+        

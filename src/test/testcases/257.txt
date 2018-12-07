@@ -1,0 +1,5 @@
+
+            procedure main();
+            begin
+                for to N do a := a+N ;
+            end

@@ -1,0 +1,1 @@
+function,foo,(,b,:,integer,),:,real,;,var,c,:,boolean,;,begin,d,=,c,+,b,end,<EOF>

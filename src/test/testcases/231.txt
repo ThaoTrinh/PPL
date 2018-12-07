@@ -1,0 +1,5 @@
+
+            procedure main();
+                begin
+                    a := (Not 5 + 8) - 3;
+                end

@@ -1,0 +1,5 @@
+
+            procedure main();
+                begin
+                    a := foo(2)/3 mod 4 OR (110 ANd 7 -63);
+                end

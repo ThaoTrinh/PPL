@@ -1,0 +1,8 @@
+
+            procedure main();
+            begin
+                for i:=1 to N do
+                    for i:=4 downto 1 do a := a - N ;
+                        for i:=foo(3)[4] to 4-3 do a := a - N ;
+                for i:=5 to 9 do return a;
+            end

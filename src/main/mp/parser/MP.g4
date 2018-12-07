@@ -11,22 +11,22 @@ options{
 }
 
 
-program: (vardecl | funcdecl | procdecl)+ EOF;
+program: (var_decl | func_decl | procedure_decl)+ EOF;
 
-vardecl : VAR (param SEMI)+ ;
+var_decl : VAR (var_list COLON mptype SEMI)+ ;
 
-funcdecl : FUNCTION ID LB paramdecl? RB COLON mptype SEMI vardecl? compoundstm ;
+var_list : (ID COMMA)*ID ;
 
-procdecl: PROCEDURE ID LB paramdecl? RB SEMI vardecl? compoundstm ;
+func_decl : FUNCTION ID LB param_decl? RB COLON mptype SEMI var_decl? compound_stm ;
 
-paramdecl : (param SEMI)* (param);
+procedure_decl: PROCEDURE ID LB param_decl? RB SEMI var_decl? compound_stm ;
 
-param: (ID COMMA)*ID COLON mptype;
+param_decl : (var_list COLON mptype SEMI)* (var_list COLON mptype);
 
 exp: exp (AND THEN | OR ELSE) exp1
       | exp1 ;
 
-exp1: exp2 (EQUAL | NOTEQUAL | LT | LE | GT | GE) exp2
+exp1: exp2 (EQUAL | NOT_EQUAL | LT | LE | GT | GE) exp2
       | exp2 ;
 
 exp2: exp2 (ADD | SUB | OR) exp3
@@ -35,80 +35,80 @@ exp2: exp2 (ADD | SUB | OR) exp3
 exp3: exp3 (DIV | MUL | MOD | AND | DIVISION) exp4
       | exp4 ;
 
-exp4: (NOT|SUB) exp4
+exp4: (NOT|'-') exp4
       | exp5 ;
 
 exp5: exp5 LSB exp RSB | exp6 ;
 
-exp6: LB exp RB| INTLIT | REALLIT | BOOLEANLIT | STRINGLIT | ID | ID invocationexp ;
+exp6: LB exp RB| INTLIT | REALLIT | BOOLEANLIT | STRINGLIT | ID | ID invocation_exp ;
 
-indexexp: exp5 LSB exp RSB ;
+index_exp: exp5 LSB exp RSB ;
 
-invocationexp: LB listexpression RB ;
+invocation_exp: LB list_expression RB ;
 
-listexpression: ((exp COMMA)*exp)? ;
+list_expression: ((exp COMMA)*exp)? ;
 
 statements :
-    linestatement SEMI
-    | blockstatement
+    line_statement SEMI
+    | block_statement
     ;
 
-linestatement:
-    assignmentstm
-    | breakstm
-    | continuestm
-    | returnstm
-    | callstm
+line_statement:
+    assignment_stm
+    | break_stm
+    | continue_stm
+    | return_stm
+    | call_stm
     ;
 
-blockstatement:
-    ifstm
-    | whilestm
-    | forstm
-    | compoundstm
-    | withstm
+block_statement:
+    if_stm
+    | while_stm
+    | for_stm
+    | compound_stm
+    | with_stm
     ;
 
 
-assignmentstm: assignments exp ;
-assignments: ((ID| indexexp)ASSIGN) + ;
+assignment_stm: assignments exp ;
+assignments: ((ID| index_exp)':=') + ;
 
-ifstm: IF exp THEN statements (ELSE statements)? ;
+if_stm: IF exp THEN statements (ELSE statements)? ;
 
-whilestm: WHILE exp DO statements ;
+while_stm: WHILE exp DO statements ;
 
-forstm: FOR ID ASSIGN exp (TO | DOWNTO) exp DO statements ;
+for_stm: FOR ID ':=' exp (TO | DOWNTO) exp DO statements ;
 
-breakstm: BREAK ;
+break_stm: BREAK ;
 
-continuestm: CONTINUE ;
+continue_stm: CONTINUE ;
 
-returnstm: RETURN exp? ;
+return_stm: RETURN exp? ;
 
-compoundstm: BEGIN statements* END ;
+compound_stm: BEGIN statements* END ;
 
-withstm: WITH (param SEMI)+ DO statements ;
+with_stm: WITH (var_list COLON mptype SEMI)+ DO statements ;
 
-callstm: ID LB listexpression RB ;
+call_stm: ID LB list_expression RB ;
 
 mptype
-    : primitivetype
-    | compoundtype
+    : primitive_type
+    | compound_type
     ;
 
-primitivetype
+primitive_type
     : INTEGER
     | REAL
     | BOOLEAN
     | STRING
     ;
 
-compoundtype
-    : ARRAY arrayvalue OF primitivetype
+compound_type
+    : ARRAY array_value OF primitive_type
     ;
 
-arrayvalue
-    : LSB SUB? INTLIT DOUBLEDOT SUB? INTLIT RSB
+array_value
+    : LSB (('-'? INTLIT)|exp) DOUBLE_DOT (('-'? INTLIT)|exp) RSB
     ;
 
 ADD: '+' ;
@@ -121,7 +121,7 @@ DIVISION: '/' ;
 
 EQUAL: '=' ;
 
-NOTEQUAL: '<>' ;
+NOT_EQUAL: '<>' ;
 
 LT: '<' ;
 
@@ -149,7 +149,7 @@ COLON : ':' ;
 
 COMMA : ',' ;
 
-DOUBLEDOT : '..' ;
+DOUBLE_DOT : '..' ;
 
 ASSIGN: ':=' ;
 
@@ -262,7 +262,7 @@ REALLIT: ([0-9]+ (('.' [0-9]* (EXPONENT)?)? | EXPONENT ))
 
 
 STRINGLIT
-    : UNCLOSESTRING '"'
+    : UNCLOSE_STRING '"'
     {self.text = self.text[1:-1]}
     ;
 
@@ -272,17 +272,17 @@ ID: ([a-zA-Z] | '_') ([a-zA-Z0-9] | '_')* ;
 
 WS : [ \t\r\n]+ -> skip ; // skip spaces, tabs, newlines
 
-UNCLOSESTRING
+UNCLOSE_STRING
     : '"' ('\\' [btrnf\\'"] | ~[\b\t\r\n\f\\'"])*
     {raise UncloseString(self.text[1:])}
     ;
 
-ILLEGALESCAPE
-    : UNCLOSESTRING '\\' ~[btnfr"'\\]
+ILLEGAL_ESCAPE
+    : UNCLOSE_STRING '\\' ~[btnfr"'\\]
     {raise IllegalEscape(self.text[1:])}
     ;
 
-ERRORCHAR
+ERROR_CHAR
     :.
     {raise ErrorToken(self.text)}
     ;

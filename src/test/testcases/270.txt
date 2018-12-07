@@ -1,0 +1,21 @@
+
+            function main() : array [1 .. 2] of real;
+            begin
+                // This is a line comment 
+                {
+                    begin
+                        return foo(a,b,456)[a[a[a[1]]]];
+                    end
+                }
+            end
+            var a, b, c: integer;
+            procedure foo();
+                var
+                    y : array [2 .. 3] of real ;
+                    z : array [1 .. 2] of integer ;
+                begin
+                    foo (x ) ; // Call function
+                    foo (y ) ; // Call function
+                    foo ( z ) ; // Call function
+                end
+            

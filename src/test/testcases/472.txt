@@ -1,0 +1,6 @@
+procedure main();
+        var a: real;
+        begin
+            for a := 2.2 to 5.5 do
+                a := a + 1; 
+        end

@@ -1,0 +1,5 @@
+procedure foo ();
+                    var x , y : real ;
+                    begin
+                        i := i + 1;
+                    end
